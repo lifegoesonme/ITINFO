@@ -1,0 +1,31 @@
+특정 commit 삭제 방법 (Git Bash 사용)
+branch_name : master
+==============================
+
+[Github Web Browser에서 작업한 경우 Git Bash에서도 확인되게끔 동기화부터 해야 함]
+# git fecth  // 저장소 최신 변경 사항 가져오기
+# git pull origin master  // 브랜치 최신 상태로 업데이트
+# git log  // 최근 커밋들 제대로 동기화 되었는지 확인
+
+[삭제]
+# cd D:\github_projects  // my_git_repository_path로 이동
+# git rebase -i HEAD~5  // commit 개수가 5개 미만인 경우 에러 발생함
+pick v0.1 커밋 메시지 1
+pick v0.2 커밋 메시지 2  // 삭제 희망
+pick v0.3 커밋 메시지 3  // 삭제 희망
+
+pick v0.1 커밋 메시지 1
+drop v0.2 커밋 메시지 2
+drop v0.3 커밋 메시지 3
+:wq!
+
+# git push origin master --force
+
+
+
+[요약]
+git rebase -i HEAD~n 명령어로 대화형 리베이스를 시작.
+삭제하고 싶은 커밋 앞의 pick을 drop으로 수정.
+수정 후 저장 및 종료.
+원격 저장소에 반영하려면 git push --force로 강제 푸시.
+
