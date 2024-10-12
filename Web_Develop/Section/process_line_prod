@@ -1,0 +1,235 @@
+<div class="EUM-timeline-section">
+  <div class="EUM-timeline-container">
+    <div class="EUM-timeline-line-container">
+      <div class="EUM-timeline-line"></div>
+      <div class="EUM-highlighted-line"></div>
+      <div class="EUM-circle" data-step="0" style="left: 5.5%;"></div>
+      <div class="EUM-circle" data-step="1" style="left: 16.6%;"></div>
+      <div class="EUM-circle" data-step="2" style="left: 27.7%;"></div>
+      <div class="EUM-circle" data-step="3" style="left: 38.8%;"></div>
+      <div class="EUM-circle" data-step="4" style="left: 49.9%;"></div>
+      <div class="EUM-circle" data-step="5" style="left: 61%;"></div>
+      <div class="EUM-circle" data-step="6" style="left: 72.1%;"></div>
+      <div class="EUM-circle" data-step="7" style="left: 83.2%;"></div>
+      <div class="EUM-circle" data-step="8" style="left: 94.3%;"></div>
+    </div>
+  </div>
+</div>
+
+<div class="EUM-gallery">
+  <button class="EUM-arrow left-arrow"></button>
+  <div class="EUM-gallery-slide" id="slide-0">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/2ff12f9f9cdf6.jpg" alt="이미지 1" />
+  </div>
+  <div class="EUM-gallery-slide" id="slide-1">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/a5e7db1915fbd.jpg" alt="이미지 2" />
+  </div>
+  <div class="EUM-gallery-slide" id="slide-2">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/194a3019c20dd.jpg" alt="이미지 3" />
+  </div>
+  <div class="EUM-gallery-slide" id="slide-3">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/f44b587f9db97.png" alt="이미지 4" />
+  </div>
+  <div class="EUM-gallery-slide" id="slide-4">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/e3e543b3b4357.jpg" alt="이미지 5" />
+  </div>
+  <div class="EUM-gallery-slide" id="slide-5">
+    <img src="https://yourdomain.com/path/to/image6.jpg" alt="이미지 6" />
+  </div>
+  <div class="EUM-gallery-slide" id="slide-6">
+    <img src="https://yourdomain.com/path/to/image7.jpg" alt="이미지 7" />
+  </div>
+  <div class="EUM-gallery-slide" id="slide-7">
+    <img src="https://yourdomain.com/path/to/image8.jpg" alt="이미지 8" />
+  </div>
+  <div class="EUM-gallery-slide" id="slide-8">
+    <img src="https://yourdomain.com/path/to/image9.jpg" alt="이미지 9" />
+  </div>
+  <button class="EUM-arrow right-arrow"></button>
+</div>
+
+<style>
+  .EUM-timeline-section {
+    background-color: #212121;
+    height: 0vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .EUM-timeline-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .EUM-timeline-line-container {
+    position: relative;
+    width: 100%;
+    height: 40px;
+  }
+
+  .EUM-timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #424242;
+    transform: translateY(-50%);
+  }
+
+  .EUM-highlighted-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    background-color: orange;
+    transform: translateY(-50%);
+    width: 5.5%;
+    transition: width 0.5s ease;
+  }
+
+  .EUM-circle {
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #424242;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .EUM-circle.passed {
+    background-color: orange;
+  }
+
+  .EUM-circle.active {
+    background-color: orange;
+    animation: smoothPulse 1.5s infinite;
+  }
+
+  @keyframes smoothPulse {
+    0%, 100% {
+      box-shadow: 0 0 15px 3px rgba(255, 165, 0, 0.8);
+    }
+    50% {
+      box-shadow: 0 0 25px 6px rgba(255, 165, 0, 0.6);
+    }
+  }
+
+  .EUM-gallery {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    margin-top: 100px;
+    background-color: #333;
+    border-radius: 40px;
+  }
+
+  .EUM-gallery-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .EUM-gallery-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+  }
+
+  .EUM-gallery-slide.active {
+    display: flex;
+  }
+
+  .EUM-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 10;
+    color: white;
+  }
+
+  .left-arrow::before {
+    content: '❮';
+  }
+
+  .right-arrow::before {
+    content: '❯';
+  }
+
+  .left-arrow {
+    left: 10px;
+  }
+
+  .right-arrow {
+    right: 10px;
+  }
+</style>
+
+<script>
+  const circles = document.querySelectorAll(".EUM-circle");
+  const slides = document.querySelectorAll(".EUM-gallery-slide");
+  const highlightedLine = document.querySelector(".EUM-highlighted-line");
+  const leftArrow = document.querySelector(".left-arrow");
+  const rightArrow = document.querySelector(".right-arrow");
+  let currentStep = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.transform = `translateX(${(i - index) * 100}%)`;
+    });
+  }
+
+  function updateHighlight(step) {
+    circles.forEach((circle, index) => {
+      circle.classList.toggle("passed", index < step);
+      circle.classList.toggle("active", index === step);
+    });
+    highlightedLine.style.width = `${5.5 + 11.1 * step}%`;
+  }
+
+  function changeSlide(newStep) {
+    currentStep = newStep;
+    showSlide(currentStep);
+    updateHighlight(currentStep);
+  }
+
+  circles.forEach((circle) => {
+    circle.addEventListener("click", () => {
+      const step = parseInt(circle.getAttribute("data-step"));
+      changeSlide(step);
+    });
+  });
+
+  leftArrow.addEventListener("click", () => {
+    const newStep = (currentStep - 1 + slides.length) % slides.length;
+    changeSlide(newStep);
+  });
+
+  rightArrow.addEventListener("click", () => {
+    const newStep = (currentStep + 1) % slides.length;
+    changeSlide(newStep);
+  });
+
+  showSlide(currentStep);
+  updateHighlight(currentStep);
+</script>
