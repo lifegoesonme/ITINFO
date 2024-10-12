@@ -1,0 +1,182 @@
+<div class="EUM-section">
+  <div class="EUM-container">
+    <div class="EUM-slide" style="background-image: url('https://cdn.imweb.me/upload/S20220110de20c90fdecb7/08c741be731f3.png');">
+      <div class="EUM-topic">홈페이지 제작</div>
+      <div class="EUM-content">
+        <div class="category">HOMEPAGE</div>
+        <h4 class="title">홈페이지 제작</h4>
+        <p class="description">맞춤형 홈페이지를 통해 브랜딩 구축과 이익 실현을 달성합니다.</p>
+        <p class="text"> - PC 홈페이지</p>
+        <p class="text"> - 모바일 홈페이지</p>
+        <p class="text"> - 반응형 홈페이지</p>
+        <p class="text"> - 쇼핑몰</p>
+        <p class="text"> - 숙박/예약</p>
+        <p class="text"> - 디지털컨텐츠 판매</p>
+      </div>
+    </div>
+
+    <div class="EUM-slide" style="background-image: url('https://cdn.imweb.me/upload/S20220110de20c90fdecb7/c1363454a5463.png');">
+      <div class="EUM-topic">랜딩페이지</div>
+      <div class="EUM-content">
+        <div class="category">RANDING PAGE</div>
+        <h4 class="title">랜딩페이지 제작</h4>
+        <p class="description">명확한 타겟을 목표로 제작하여 최대의 이익 실현을 달성합니다.</p>
+        <p class="text"> - 이벤트 페이지</p>
+        <p class="text"> - 특가/프로모션 페이지</p>
+      </div>
+    </div>
+
+    <div class="EUM-slide" style="background-image: url('https://cdn.imweb.me/upload/S20220110de20c90fdecb7/de750590b37f8.png');">
+      <div class="EUM-topic">유지보수 및 운영</div>
+      <div class="EUM-content">
+        <div class="category">MAINTENANCE</div>
+        <h4 class="title">유지보수 및 운영</h4>
+        <p class="description">최신 트렌드에 맞게 리뉴얼합니다.</p>
+        <p class="text"> - 홈페이지 리뉴얼</p>
+        <p class="text"> - 1:1 운영 교육</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @import url('https://cdn.jsdelivr.net/npm/pretendard/dist/web/static/pretendard.css');
+  * {
+    box-sizing: border-box;
+  }
+  .EUM-section {
+    font-family: 'Pretendard', sans-serif;
+    overflow: hidden;
+    margin: 0;
+    background-color: #1B1B1B;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+  }
+  .EUM-container {
+    width: 100%;
+    display: flex;
+    padding: 0 20px;
+  }
+  .EUM-slide {
+    height: 80vh;
+    border-radius: 20px;
+    margin: 10px;
+    cursor: pointer;
+    color: #fff;
+    flex: 2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: all 0.7s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .EUM-topic {
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    opacity: 1;
+    text-align: center;
+    transition: opacity 0.3s ease;
+  }
+  .EUM-content {
+    position: absolute;
+    top: 50%;
+    left: 80px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in 0.4s;
+  }
+  .category {
+    font-size: 20px;
+    color: #ffd700;
+    margin-bottom: 15px;
+  }
+  .title {
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .description {
+    font-size: 18px;
+    color: #aaa;
+    margin-bottom: 50px;
+  }
+  .text {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 5px;
+  }
+  .EUM-slide.active {
+    flex: 6;
+    filter: blur(0px);
+  }
+  .EUM-slide.active .EUM-topic {
+    opacity: 0;
+  }
+  .EUM-slide.active .EUM-content {
+    opacity: 1;
+  }
+  .EUM-slide:hover {
+    flex: 6;
+  }
+  .EUM-slide:hover .EUM-content {
+    opacity: 1;
+  }
+  .EUM-slide:not(.active) .EUM-content {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+  }
+  @media screen and (max-width: 50rem) {
+    .EUM-container {
+      display: flex;
+      height: 90vh;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+    }
+    .EUM-slide {
+      width: 90vw;
+      border-radius: 20px;
+      margin: 10px;
+      cursor: pointer;
+      color: #fff;
+      flex: 1;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      transition: all 0.7s ease-in-out;
+    }
+  }
+</style>
+
+<script>
+  function slidesPlugin(activeSlide = 0) {
+    const slides = document.querySelectorAll(".EUM-slide");
+    slides[activeSlide].classList.add("active");
+    slides.forEach((slide) => {
+      slide.addEventListener("mouseover", () => {
+        clearActiveClasses();
+        slide.classList.add("active");
+      });
+    });
+    function clearActiveClasses() {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+    }
+  }
+  slidesPlugin();
+</script>
