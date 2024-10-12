@@ -1,0 +1,18 @@
+에러 : 
+warning: in the working copy of 'Github_Guide/commit_delete', LF will be replaced by CRLF the next time Git touches it
+
+해석 : 
+Git에서 나타나는 "LF will be replaced by CRLF" 경고 메시지는 줄바꿈 방식의 차이로 인한 경고. 운영체제마다 줄바꿈을 처리하는 방식이 다르기 때문에 발생하는 문제.
+현재 Git이 작업하고 있는 파일의 줄바꿈 형식이 LF인데, Windows 환경에서 이 파일을 처리할 때 줄바꿈이 CRLF로 자동 변경될 것이라는 경고.
+
+개념 :
+LF (Line Feed): Linux/macOS에서 줄바꿈을 나타낼 때 사용하는 방식
+CRLF (Carriage Return + Line Feed): Windows에서 줄바꿈을 나타낼 때 사용하는 방식
+
+줄바꿈 변환 설정
+
+자동 변환 켜기 (권장): Git Bash
+# git config --global core.autocrlf true
+
+자동 변환 끄기: Git Bash
+# git config --global core.autocrlf false
