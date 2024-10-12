@@ -1,8 +1,13 @@
 동기화
 branch_name : master
 
-웹브라우저(GitHub)에서의 변경 사항을 로컬로 Pull(가져오기)
+웹브라우저(GitHub)에서의 변경 사항을 로컬로 Pull(가져오기) : Git Bash
 # git pull origin master
 
-로컬 변경 사항을 웹브라우저(GitHub)로 Push(넣기)
-# git push origin master
+로컬 변경 사항을 웹브라우저(GitHub)로 Push(넣기) : Git Bash
+# git add -A  // 모든 변경 사항 Git에 추가
+또는
+# git add .  // 현재 디렉토리 내 변경사항을 Git에 추가
+# git commit -m "update_20241011"  // Git에 추가한 변경사항 커밋
+# git push origin master  // origin(원격지)에 현재 Git 데이터 Push(넣기)
+
