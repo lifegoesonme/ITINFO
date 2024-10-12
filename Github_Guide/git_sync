@@ -1,0 +1,12 @@
+Git Bash (Local) --- GitHub Web Browser 간 동기화 방법
+
+Git Bash에서 업데이트 발생한 경우
+# git add -A  // 모든 변경 사항을 Git에 추가합니다.
+
+업데이트 사항 커밋
+# git commit -m "update_20241012"
+
+원격 저장소(GitHub, origin)로 푸시하기
+# git push origin master
+
+이제 GitHub Web Browser에서 동기화(sync) 확인 가능함
