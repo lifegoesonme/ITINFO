@@ -1,0 +1,220 @@
+<!-- 타임라인 전체 섹션 -->
+<div class="EUM-timeline-section">
+  <!-- 타임라인 컨테이너 -->
+  <div class="EUM-timeline-container">
+    <!-- 타임라인 라인과 동그라미를 감싸는 컨테이너 -->
+    <div class="EUM-timeline-line-container">
+      <!-- 회색 라인: 타임라인의 기본 라인 -->
+      <div class="EUM-timeline-line"></div>
+      <!-- 주황색 라인: 현재 진행된 상태를 나타냄 -->
+      <div class="EUM-highlighted-line"></div>
+      <!-- 첫 번째 동그라미, data-step으로 각 스텝 구분 -->
+      <div class="EUM-circle" data-step="0" style="left: 5.5%;"></div>
+      <div class="EUM-circle" data-step="1" style="left: 16.6%;"></div>
+      <div class="EUM-circle" data-step="2" style="left: 27.7%;"></div>
+      <div class="EUM-circle" data-step="3" style="left: 38.8%;"></div>
+      <div class="EUM-circle" data-step="4" style="left: 49.9%;"></div>
+      <div class="EUM-circle" data-step="5" style="left: 61%;"></div>
+      <div class="EUM-circle" data-step="6" style="left: 72.1%;"></div>
+      <div class="EUM-circle" data-step="7" style="left: 83.2%;"></div>
+      <div class="EUM-circle" data-step="8" style="left: 94.3%;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 이미지 갤러리 -->
+<div class="EUM-gallery">
+  <!-- 왼쪽 화살표 버튼 -->
+  <button class="EUM-arrow left-arrow"></button>
+
+  <!-- 각 슬라이드에 이미지 포함 -->
+  <div class="EUM-gallery-slide" id="slide-0">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/2ff12f9f9cdf6.jpg" alt="이미지 1" />
+  </div>
+  <div class="EUM-gallery-slide" id="slide-1">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/a5e7db1915fbd.jpg" alt="이미지 2" />
+  </div>
+  <div class="EUM-gallery-slide" id="slide-2">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/194a3019c20dd.jpg" alt="이미지 3" />
+  </div>
+  <div class="EUM-gallery-slide" id="slide-3">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/f44b587f9db97.png" alt="이미지 4" />
+  </div>
+  <div class="EUM-gallery-slide" id="slide-4">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/e3e543b3b4357.jpg" alt="이미지 5" />
+  </div>
+  <div class="EUM-gallery-slide" id="slide-5">
+    <img src="https://yourdomain.com/path/to/image6.jpg" alt="이미지 6" />
+  </div>
+  <div class="EUM-gallery-slide" id="slide-6">
+    <img src="https://yourdomain.com/path/to/image7.jpg" alt="이미지 7" />
+  </div>
+  <div class="EUM-gallery-slide" id="slide-7">
+    <img src="https://yourdomain.com/path/to/image8.jpg" alt="이미지 8" />
+  </div>
+  <div class="EUM-gallery-slide" id="slide-8">
+    <img src="https://yourdomain.com/path/to/image9.jpg" alt="이미지 9" />
+  </div>
+
+  <!-- 오른쪽 화살표 버튼 -->
+  <button class="EUM-arrow right-arrow"></button>
+</div>
+
+<style>
+  /* 타임라인 섹션의 배경과 정렬 설정 */
+  .EUM-timeline-section {
+    background-color: #212121; /* 어두운 배경색 */
+    height: 0vh; /* 섹션 높이를 0으로 설정 */
+    display: flex; /* 플렉스 레이아웃 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+  }
+
+  /* 타임라인 컨테이너: 전체 너비를 채움 */
+  .EUM-timeline-container {
+    width: 100%; /* 가로 너비 100% */
+    display: flex; /* 플렉스 정렬 */
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 타임라인의 라인 컨테이너 */
+  .EUM-timeline-line-container {
+    position: relative;
+    width: 100%; /* 전체 가로 너비 */
+    height: 40px; /* 높이 40px */
+  }
+
+  /* 기본 회색 타임라인 */
+  .EUM-timeline-line {
+    position: absolute;
+    top: 50%; /* 수직 중앙 정렬 */
+    left: 0; /* 왼쪽 정렬 */
+    width: 100%;
+    height: 4px; /* 두께 4px */
+    background-color: #424242;
+  }
+
+  /* 주황색 하이라이트 라인 */
+  .EUM-highlighted-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    background-color: orange;
+    width: 5.5%; /* 초기 넓이 */
+    transition: width 0.5s ease; /* 부드러운 전환 */
+  }
+
+  /* 타임라인의 동그라미 */
+  .EUM-circle {
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #424242;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  /* 주황색으로 변경된 동그라미 */
+  .EUM-circle.passed {
+    background-color: orange;
+  }
+
+  /* 활성화된 동그라미에 애니메이션 추가 */
+  .EUM-circle.active {
+    background-color: orange;
+    animation: smoothPulse 1.5s infinite;
+  }
+
+  /* 부드럽게 반짝이는 애니메이션 */
+  @keyframes smoothPulse {
+    0%, 100% {
+      box-shadow: 0 0 15px 3px rgba(255, 165, 0, 0.8);
+    }
+    50% {
+      box-shadow: 0 0 25px 6px rgba(255, 165, 0, 0.6);
+    }
+  }
+
+  /* 갤러리 스타일 */
+  .EUM-gallery {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    margin-top: 100px;
+    background-color: #333;
+    border-radius: 40px;
+  }
+
+  /* 갤러리 슬라이드 */
+  .EUM-gallery-slide {
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .EUM-gallery-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+  }
+
+  .EUM-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 32px;
+  }
+</style>
+
+<script>
+  // 요소 선택 및 변수 정의
+  const circles = document.querySelectorAll(".EUM-circle");
+  const slides = document.querySelectorAll(".EUM-gallery-slide");
+  const leftArrow = document.querySelector(".left-arrow");
+  const rightArrow = document.querySelector(".right-arrow");
+  let currentStep = 0;
+
+  // 슬라이드 표시 함수
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.transform = `translateX(${(i - index) * 100}%)`;
+    });
+  }
+
+  // 하이라이트 업데이트
+  function updateHighlight(step) {
+    circles.forEach((circle, index) => {
+      circle.classList.toggle("passed", index < step);
+      circle.classList.toggle("active", index === step);
+    });
+  }
+
+  // 슬라이드 변경
+  function changeSlide(newStep) {
+    currentStep = newStep;
+    showSlide(currentStep);
+    updateHighlight(currentStep);
+  }
+
+  leftArrow.addEventListener("click", () => {
+    const newStep = (currentStep - 1 + slides.length) % slides.length;
+    changeSlide(newStep);
+  });
+
+  rightArrow.addEventListener("click", () => {
+    const newStep = (currentStep + 1) % slides.length;
+    changeSlide(newStep);
+  });
+
+  showSlide(currentStep);
+  updateHighlight(currentStep);
+</script>
