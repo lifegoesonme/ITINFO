@@ -56,11 +56,12 @@
     overflow: hidden;
     margin: 0;
     background-color: #1B1B1B;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 16px;
+	margin-bottom: 15px;
   }
 
   /* 컨테이너 설정 */
@@ -72,7 +73,7 @@
 
   /* 슬라이드 설정 */
   .EUM-slide {
-    height: 80vh;
+    height: 85vh;
     border-radius: 20px;
     margin: 10px;
     cursor: pointer;
@@ -114,7 +115,7 @@
   /* 카테고리 설정 */
   .category {
     font-size: 20px;
-    color: #ffd700;
+    color: #0049FF;
     margin-bottom: 15px;
   }
 
