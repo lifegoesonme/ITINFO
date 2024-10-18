@@ -68,8 +68,8 @@
 <style>
   .feature-grid {
     display: grid;
-    /* 전체 6열로 고정 */
-    grid-template-columns: repeat(6, 1fr);
+    /* 전체 4열로 고정 */
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px; /* 여백 넓게 */
     padding: 40px;
     justify-items: center;
