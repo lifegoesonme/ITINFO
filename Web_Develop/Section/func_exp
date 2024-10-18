@@ -1,0 +1,104 @@
+<div class="feature-grid">
+  <div class="feature-card">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/185d70b28ff18.png" alt="회원 관리 아이콘" />
+    <p>회원관리</p>
+  </div>
+  <div class="feature-card">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/6a62058f19889.png" alt="접속자 통계 아이콘" />
+    <p>접속자통계</p>
+  </div>
+  <div class="feature-card">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/7c48bc4b3da9c.png" alt="각종 게시판 아이콘" />
+    <p>각종 게시판</p>
+  </div>
+  <div class="feature-card">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/c286eec305ce2.png" alt="상품 관리 아이콘" />
+    <p>상품관리</p>
+  </div>
+    <div class="feature-card">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/18b61b549186e.png" alt="상품 관리 아이콘" />
+    <p>팝업관리</p>
+  </div>
+    <div class="feature-card">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/18b61b549186e.png" alt="상품 관리 아이콘" />
+    <p>배너관리</p>
+  </div>
+    <div class="feature-card">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/e890ac97f87ac.png" alt="상품 관리 아이콘" />
+    <p>자동메일발송</p>
+  </div>
+    <div class="feature-card">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/ca099f71bc5d6.png" alt="각종 게시판 아이콘" />
+    <p>SMS발송</p>
+  </div>
+    <div class="feature-card">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/1a8a3d65e3864.png" alt="각종 게시판 아이콘" />
+    <p>카카오알림톡</p>
+  </div>
+    <div class="feature-card">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/1a8a3d65e3864.png" alt="각종 게시판 아이콘" />
+    <p>채널톡</p>
+  </div>
+    <div class="feature-card">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/b944de52b40e1.png" alt="각종 게시판 아이콘" />
+    <p>실시간문의</p>
+  </div>
+    <div class="feature-card">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/cd87987f9cee1.png" alt="각종 게시판 아이콘" />
+    <p>입력폼(데이터수집)</p>
+  </div>
+    <div class="feature-card">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/8c449a04e73df.png" alt="각종 게시판 아이콘" />
+    <p>SNS간편로그인</p>
+  </div>
+    <div class="feature-card">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/0cf78af2d2320.png" alt="각종 게시판 아이콘" />
+    <p>구글지도 연동</p>
+  </div>
+    <div class="feature-card">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/0cf78af2d2320.png" alt="각종 게시판 아이콘" />
+    <p>네이버지도 연동</p>
+  </div>
+    <div class="feature-card">
+    <img src="https://cdn.imweb.me/upload/S2024100189e3024606934/4535aef371f96.png" alt="각종 게시판 아이콘" />
+    <p>SSL보안설정</p>
+  </div>
+</div>
+
+<style>
+  .feature-grid {
+    display: grid;
+    /* 전체 6열로 고정 */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 40px; /* 여백 넓게 */
+    padding: 40px;
+    justify-items: center;
+    align-items: center; /* 그리드 내부 요소 수직 중앙 정렬 */
+  }
+
+  .feature-card {
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.2s ease-in-out;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 수직 중앙 정렬 */
+    align-items: center; /* 수평 중앙 정렬 */
+    background-color: transparent; /* 배경색 제거 */
+    box-sizing: border-box;
+    border: none; /* 테두리 제거 */
+  }
+
+  .feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 73, 255, 0.7);
+  }
+
+  .feature-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+</style>
