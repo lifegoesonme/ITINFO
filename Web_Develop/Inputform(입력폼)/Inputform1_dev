@@ -1,0 +1,355 @@
+<style>
+  /* 요약 */
+    /* 입력폼 유형 : 단일선택 */
+      /* 홈페이지 유형 */
+    /* 입력폼 유형 : 단답형 */
+      /* 성함/회사명/브랜드명 */
+      /* 연락처 */
+      /* 예산 */
+      /* 레퍼런스 사이트 URL */
+      /* 현재 사이트 URL */
+    /* 입력폼 유형 : 이메일 */
+      /* 이메일 */
+    /* 입력폼 유형 : 여러줄 */
+      /* 문의내용 */
+    /* 입력폼 유형 : 파일업로드 */
+      /* 파일첨부 */
+  /* ================================================ */
+  /* ================================================ */
+  
+  /* H2 타이틀 텍스트 스타일 */
+  #radio_3510i2h87B::before {
+    content: '사이트 유형 *'; /* 텍스트 */
+    font-size: 26px;
+    font-weight: bold;
+    display: block;
+    color: #ffffff; /* 텍스트 색상 */
+	margin-bottom: 10px !important;
+  }
+  
+  /* 홈페이지 유형 */
+  #radio_3510i2h87B { /* 홈페이지 유형 form-group id 값 */
+    width: 100% !important; /* 1행 가로(width) 100% 중 100% 전체 사용 */
+    display: block !important; /* 레이블 표시 O */
+	margin-bottom: 2.5% !important;
+  }
+
+  /* H2 타이틀 텍스트 스타일 */
+  #input_a3e5e359e3a57::before {
+    content: '기본 입력 사항 *'; /* 텍스트 */
+    font-size: 26px;
+    font-weight: bold;
+    display: block;
+    color: #ffffff; /* 텍스트 색상 */
+	margin-top: 15% !important;
+	margin-bottom: 2.5% !important;
+  }
+
+  /* 성함/회사명/브랜드명 + 연락처 = 같은 행 배치 */
+  #input_a3e5e359e3a57,/* 성함/회사명/브랜드명 form-group id */
+  #input_6d7987887cecc { /* 연락처 form-group id */
+    width: 48% !important; /* 1행 가로(width) 100% 중 48% 사용 */
+    height: 60px !important;
+    padding: 0px !important;
+    margin-right: 2% !important; /* 1행 가로(width) 100% 중 2%를 우측 여백으로 사용 */
+    display: inline-block !important;
+  }
+
+  /* 이메일 + 예산 = 같은 행 배치 */
+  #email_6286412848, /* 이메일 form-group id */
+  #input_5442L6k2w4 { /* 예산 form-group id */
+    width: 48% !important; /* 1행 가로(width) 100% 중 48% 사용 */
+    height: 60px !important;
+    padding: 0px !important;
+    margin-right: 2% !important; /* 1행 가로(width) 100% 중 2%를 우측 여백으로 사용 */
+    display: inline-block !important;
+  }
+
+  /* H2 타이틀 텍스트 스타일 */
+  #input_4e74x0z13y::before {
+    content: '선택 입력 사항'; /* 텍스트 */
+    font-size: 26px;
+    font-weight: bold;
+    display: block;
+    color: #ffffff; /* 텍스트 색상 */
+	margin-top: 15% !important;
+	margin-bottom: 2.5% !important;
+  }
+  
+  /* 레퍼런스 사이트 URL + 현재 사이트 URL = 같은 행 배치 */
+  #input_4e74x0z13y, /* 레퍼런스 사이트 URL form-group id */
+  #input_5u6CW05P0f { /* 현재 사이트 URL form-group id */
+    width: 48% !important; /* 1행 가로(width) 100% 중 48% 사용 */
+    height: 60px !important;
+    padding: 0px !important;
+    margin-right: 2% !important; /* 1행 가로(width) 100% 중 2%를 우측 여백으로 사용 */
+    display: inline-block !important;
+  }
+
+  /* 문의내용 */
+  #textarea_52757w83X1 textarea{ /* 문의내용 form-group id */
+    width: 98% !important; /* 1행 가로(width) 100% 중 98% 전체 사용 */
+    height: 200px !important;
+    margin-bottom: 20px !important;
+	max-height: none !important; /* 최대 높이 제한 해제 = height 값으로 지정하는만큼 크기 조절 가능 */
+    resize: none !important; /* 자유로운 크기 조절 비활성화 */
+  }
+
+  /* 파일 첨부 */
+  #file_T4715g465l_w2024101781831981e3b65 { /* 파일첨부 form-group id */
+    width: 100% !important; /* 1행 가로(width) 100% 중 100% 전체 사용 */
+    margin-bottom: 50px !important;
+  }
+
+  /* ============== */
+  /* === 레이블 === */
+  /* ============== */
+  /* 레이블 숨기기 */
+  #radio_3510i2h87B > label, /* 자기 자신 label만 선택하고, 자식들은 영향 안받는 옵션 '>', 단일선택 입력폼에 유용해!  */
+  #input_a3e5e359e3a57 label, /* 자기 포함 모든 자식 요소까지 모두 영향받는 옵션 */
+  #input_6d7987887cecc label,
+  #email_6286412848 label, 
+  #input_5442L6k2w4 label,
+  #input_4e74x0z13y label,
+  #input_5u6CW05P0f label,
+  #textarea_52757w83X1 label,
+  #file_T4715g465l_w2024101781831981e3b65 label {
+    display: none !important; /* 레이블 숨기기 */
+  }
+
+  /* 특정 레이블은 숨기지않고 표시 */
+  /* #radio_3510i2h87B label { */
+  /*  display: block !important; /* 레이블 표시 */
+  /* } */
+
+  /* 입력폼 셀 배경 및 테두리 */
+  .form-group input,
+  .form-group textarea {
+    background-color: #0f0f0f !important;
+    border: 1px solid #818181 !important;
+    color: #fff !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+	height: 60px !important; /* 입력폼 높이 */
+  }
+ 
+  /* 드래그 스타일 */
+  ::selection {
+    background-color: #fff; /* 텍스트 드래그 시 배경 색 */
+    color: #000; /* 텍스트 드래그 시 텍스트 색 */
+  }
+  
+  /* 입력폼 내 브라우저 자동 완성된 값에 대한 스타일 */
+  input:-webkit-autofill {
+    background-color: #0f0f0f !important;
+    color: #fff !important;
+    border: 1px solid #818181 !important;
+    -webkit-text-fill-color: #fff !important; /* 텍스트 색상 */
+    transition: background-color 5000s ease-in-out 0s; /* 배경 색상 유지 */  
+  }
+
+  /* 자동완성 드래그 스타일 */
+  input:-webkit-autofill::selection {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+  
+  /* ======================= */
+  /* === 파일첨부 스타일 === */
+  /* ======================= */
+  /* 파일 첨부 전체 박스 스타일 */
+  .holder._holder {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #0F0F0F; /* 배경색 */
+    border: 1px solid #818181; /* 테두리선색 */
+    width: 98%; /* 1행 가로(width) 100% 중 98% 전체 사용 */
+    height: 70px; /* 높이 설정 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    position: relative;
+  }
+
+  /* 파일 첨부 버튼 스타일 */
+  .holder._holder .form_widget_btn {
+    background-color: #0049FF !important; /* 배경색 */
+    color: #fff !important; /* 텍스트 색상 */
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-family: 'Pretendard', sans-serif !important; /* 폰트 스타일 */
+    font-size: 14px !important; /* 폰트 크기 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  /* 파일 첨부 버튼 hover 스타일 */
+  .holder._holder .form_widget_btn:hover {
+    background-color: #0f0f0f !important; /* hover 시 배경색 */
+    color: #fff !important; /* hover 시 텍스트 색상 */
+    border: 1px solid #0049FF !important; /* 테두리 색상 */
+    transition: background-color 0.3s, color 0.3s; /* 부드러운 전환 효과 */
+  }
+
+  /* 파일 첨부 아이콘 스타일 */
+  .holder._holder .form_widget_btn i {
+    margin-right: 5px;
+  }
+
+  /* 파일 첨부 설명 텍스트 스타일 */
+  .holder._holder::after {
+    content: "50MB 이상의 파일은 이메일로 보내주세요.";
+    color: #999;
+    font-size: 12px;
+    margin-left: 10px;
+    display: block;
+  }
+
+  /* 파일 업로드 input 숨기기 */
+  .holder._holder input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+  }
+  
+  /* 보내기 버튼의 전체 박스 스타일 */
+  .form {
+    text-align: center !important; /* 보내기 버튼 우측 정렬 */
+    margin-right: 0px; /* 우측 여백 추가 */
+  }
+  
+  /* 보내기 버튼 스타일 */
+  .form a.btn.btn-primary {
+    font-family: 'Pretendard', sans-serif; /* 폰트 설정 */
+    font-size: 18px; /* 폰트 크기 설정 */
+    background-color: #0049FF !important; /* 배경색 */
+    color: #fff !important; /* 텍스트 색상 */
+    border: 1px solid #0049FF !important; /* 테두리 색상 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    padding: 10px; /* 버튼 안쪽 여백 */
+    text-decoration: none; /* 링크 밑줄 제거 */
+	width: 200px; /* 너비 조절 */
+    height: 60px; /* 높이 조절 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    line-height: 34px; /* 텍스트 세로 중앙 정렬 */
+  }
+
+  /* hover 시 버튼 스타일 */
+  .form a.btn.btn-primary:hover {
+    background-color: #0f0f0f !important; /* hover 시 배경색 */
+    color: #FFF !important; /* hover 시 텍스트 색상 */
+    border: 1px solid #0049FF !important; /* hover 시 테두리 색상 */
+	transition: background-color 0.3s, color 0.3s; /* 부드러운 전환 효과 */
+  }
+  
+  /* =========================== */
+  /* === 플레이스홀더 스타일 === */
+  /* =========================== */
+  
+  /* 플레이스홀더 텍스트 */
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: #999 !important;
+	padding-left: 2px; /* 좌측 여백 */
+    /* padding-right: 10px; /* 우측 여백 */
+	/* text-align: center; /* 중앙 정렬 */
+  }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  /* 성함/회사명/브랜드명 placeholder 설정 */
+  var inputElement1 = document.getElementById('input_txt_a3e5e359e3a57'); /* value id 값 */
+  if (inputElement1) {
+    inputElement1.setAttribute('placeholder', '성함/회사명/브랜드명');
+  }
+
+  /* 연락처 placeholder 설정 */
+  var inputElement2 = document.getElementById('input_txt_6d7987887cecc'); /* value id 값 */
+  if (inputElement2) {
+    inputElement2.setAttribute('placeholder', '연락처');
+  
+	/* 연락처 입력 시 하이픈 자동 추가 */
+    inputElement2.addEventListener('input', function(e) {
+      var value = e.target.value.replace(/\D/g, ''); // 숫자만 남기고 제거
+      if (value.length > 3 && value.length <= 7) {
+        value = value.replace(/(\d{3})(\d+)/, '$1-$2'); // 010-1234 형태로
+      } else if (value.length > 7) {
+        value = value.replace(/(\d{3})(\d{4})(\d+)/, '$1-$2-$3'); // 010-1234-5678 형태로
+      }
+      e.target.value = value; // 수정된 값을 입력란에 설정
+    });
+
+    /* 포커스가 벗어났을 때도 하이픈 유지 */
+    inputElement2.addEventListener('blur', function(e) {
+      e.target.value = e.target.value.replace(/(\d{3})(\d{4})(\d+)/, '$1-$2-$3'); // 010-1234-5678 형태 유지
+    });
+  }
+
+  /* 이메일 placeholder 설정 */
+  var inputElement3 = document.getElementById('input_email_6286412848'); /* value id 값 */
+  if (inputElement3) {
+    inputElement3.setAttribute('placeholder', '이메일 주소');
+	
+    /* 이메일 유효성 검사 */
+    inputElement3.addEventListener('blur', function(e) {
+      var emailValue = e.target.value;
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // 이메일 형식 검사 정규식
+
+      if (!emailRegex.test(emailValue)) {
+        alert('올바른 이메일 주소를 입력해 주세요 (예: example@domain.com).');
+      }
+    });
+  }
+
+  /* 예산 placeholder 설정 */
+  var inputElement4 = document.getElementById('input_txt_5442L6k2w4'); /* value id 값 */
+  if (inputElement4) {
+    inputElement4.setAttribute('placeholder', '예산금액(만원 단위)');
+
+    /* 숫자만 입력하도록 제한 + 경고 표시 */
+    inputElement4.addEventListener('input', function(e) {
+      var value = e.target.value.replace(/\D/g, ''); // 숫자 이외의 문자 제거
+      if (e.target.value !== value) {
+        alert('숫자만 입력 가능합니다.'); // 경고 메시지
+        e.target.value = value; // 숫자만 입력되도록 수정
+      }
+    });
+
+    /* 포커스가 벗어났을 때 '만원' 추가 */
+    inputElement4.addEventListener('blur', function(e) {
+      if (e.target.value && !e.target.value.includes(' 만원')) {
+        e.target.value += ' 만원'; // 포커스가 벗어났을 때 '만원' 추가
+      }
+    });
+
+    /* 포커스가 맞춰졌을 때 '만원' 제거 */
+    inputElement4.addEventListener('focus', function(e) {
+      e.target.value = e.target.value.replace(' 만원', ''); // 포커스 시 '만원' 제거
+    });
+  }
+
+  /* 레퍼런스 사이트 URL placeholder 설정 */
+  var inputElement5 = document.getElementById('input_txt_4e74x0z13y'); /* value id 값 */
+  if (inputElement5) {
+    inputElement5.setAttribute('placeholder', '벤치마킹 사이트 URL');
+  }
+
+  /* 현재 작업 중인 사이트 URL placeholder 설정 */
+  var inputElement6 = document.getElementById('input_txt_5u6CW05P0f'); /* value id 값 */
+  if (inputElement6) {
+    inputElement6.setAttribute('placeholder', '현재 사이트 URL');
+  }
+
+  /* 문의내용 placeholder 설정 */
+  var inputElement7 = document.getElementById('input_text_area_52757w83X1'); /* value id 값 */
+  if (inputElement7) {
+    inputElement7.setAttribute('placeholder', '홈페이지 제작을 생각하게 된 배경과 목적');
+  }
+});
+</script>
