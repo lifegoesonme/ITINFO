@@ -1,0 +1,195 @@
+/* 아임웹 자주묻는질문 FAQ 게시판과 같이 쓰이는 코드 - 게시판 위젯의 FAQ 스타일에서 임의로 생성가능한 카테고리와 연동해서 쓰게끔 되어 있음 */
+/* 밝은색 배경에 어울리는 플랫 메뉴바 */
+/* 포인트 컬러 : 0049FF */
+
+<!-- 플랫 메뉴바 -->
+<div class="category-menu">
+    <button class="filter-btn active" data-category="전체">전체</button>
+    <button class="filter-btn" data-category="견적상담">견적상담</button>
+    <button class="filter-btn" data-category="제작">제작</button>
+    <button class="filter-btn" data-category="계약결제">계약결제</button>
+    <button class="filter-btn" data-category="유지관리">유지관리</button>
+    <button class="filter-btn" data-category="쇼핑몰">쇼핑몰</button>
+</div>
+
+<!-- 전체 스타일 및 스크립트 -->
+<style>
+/* 플랫 메뉴바 스타일 */
+.category-menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.category-menu .filter-btn {
+    background-color: rgba(51, 51, 51, 0); /* 기존 #333333을 완전 투명하게 설정 */
+    color: #0f0f0f;  /* 폰트 색상 */
+    padding: 10px 20px;
+    margin: 0 5px;
+    margin-bottom: 55px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border: 2px solid #3d3d3d; /* 회색 테두리 */
+    transition: background-color 0.1s;
+}
+
+.category-menu .filter-btn.active {
+    background-color: #0049ff;
+    border-color: #0049ff;
+}
+
+.category-menu .filter-btn:hover {
+    /* background-color: #4895ff; */
+    border-color: #0049FF;
+}
+
+/* 흰색 가로줄 가리기 */
+.acd_row,
+.acd_heading,
+.acd_collapse,
+.li_footer,
+.paging-block,
+.pagination li,
+.pagination a {
+    border: none !important;
+    border-bottom: none !important;
+    background-color: transparent !important;
+}
+
+/* 각 요소의 배경색 설정 */
+.acd_row {
+    background-color: #0f0f0f !important;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* 게시글 사이에 1px 가로줄 추가 */
+.acd_row:not(:last-child) {
+    border-bottom: 1px solid #333 !important;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-style: solid; /* 가로선 모양 수평으로 표시되도록 설정 */
+    border-radius: 0 !important; /* 양쪽 끝을 평평하게 유지 */
+    box-shadow: none !important; /* 그림자 제거 */
+}
+
+/* 네비게이션 버튼 스타일 수정 - 다시 표시 */
+.paging-block .pagination li {
+    display: none !important;
+    margin: 0 5px;
+}
+
+.paging-block .pagination li a {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* 페이지 하단의 작성 버튼 스타일 수정 */
+.btn-block-right .btn-primary {
+    background-color: #fff !important;
+    border: none !important;
+    font-size: 16px;
+    color: #fff !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-block-right .btn-primary:hover {
+    background-color: #0049ff !important;
+    color: #fff !important;
+}
+
+/* 공유 아이콘 및 프린트 아이콘에 호버 시 색상 변경 */
+.acd_body .tools .mobile_right .icon-share,
+.acd_body .tools .mobile_right .icon-printer {
+    color: #fff !important;
+    transition: color 0.3s ease;
+}
+
+.acd_body .tools .mobile_right .icon-share:hover,
+.acd_body .tools .mobile_right .icon-printer:hover {
+    color: #0049ff !important;
+}
+
+/* 게시글 카테고리 폰트 스타일 */
+.acd_heading .category span {
+    font-size: 16px !important; /* 원하는 크기로 설정 */
+    color: #fff !important; /* 카테고리 텍스트 색상 */
+}
+
+/* 게시글 제목 폰트 스타일 */
+.acd_heading .title {
+    font-size: 16px !important; /* 원하는 크기로 설정 */
+    font-weight: bold; /* 제목 강조 */
+    color: #fff !important; /* 제목 텍스트 색상 */
+}
+
+/* 게시글 답변 본문 내용 폰트 스타일 */
+.acd_body .board_contents p {
+    font-size: 16px !important; /* 원하는 크기로 설정 */
+    line-height: 1.6; /* 가독성을 위한 줄 간격 */
+    color: #fff !important; /* 본문 텍스트 색상 */
+}
+
+/* 게시글 답변 이동, 수정, 지우기 폰트 스타일 */
+.acd_body .tools.txt a {
+    font-size: 16px !important; /* 원하는 크기로 설정 */
+    color: #fff !important; /* 링크 텍스트 색상 */
+    text-decoration: none; /* 링크 밑줄 제거 */
+    transition: color 0.3s ease; /* 호버 시 색상 전환 효과 */
+}
+
+.acd_body .tools.txt a:hover {
+    color: #0049ff !important; /* 호버 시 색상 */
+}
+
+/* 답변 내 이동,수정,지우기와 답변 사이 가로선 */
+.acd_group .acd_row .acd_collapse .acd_body {
+    background-color: #f9f9f9; /* 원하는 배경색 (예: 밝은 회색) */
+    border-radius: 8px; /* 테두리의 둥글기 (8px은 예시 값) */
+    padding: 15px; /* 내용과의 여백 */
+    margin-top: 10px; /* 위쪽 여백 */
+    border: 1px solid #ccc; /* 선택적으로 테두리 추가 */
+}
+
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // 플랫 메뉴바 필터 기능 추가
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const posts = document.querySelectorAll(".acd_row");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const category = button.getAttribute("data-category");
+
+            // 모든 버튼에서 active 클래스 제거
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            posts.forEach(post => {
+                const postCategory = post.querySelector(".category span").textContent.trim();
+                if (category === "전체" || postCategory === category) {
+                    post.style.display = "block";
+                } else {
+                    post.style.display = "none";
+                }
+            });
+        });
+    });
+});
+</script>
