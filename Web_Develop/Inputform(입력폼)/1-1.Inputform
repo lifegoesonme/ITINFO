@@ -1,22 +1,23 @@
-<style>
-  /* 요약 */
-    /* 입력폼 유형 : 단일선택 */
-      /* 홈페이지 유형 */
-    /* 입력폼 유형 : 단답형 */
-      /* 성함/회사명/브랜드명 */
-      /* 연락처 */
-      /* 예산 */
-      /* 레퍼런스 사이트 URL */
-      /* 현재 사이트 URL */
-    /* 입력폼 유형 : 이메일 */
-      /* 이메일 */
-    /* 입력폼 유형 : 여러줄 */
-      /* 문의내용 */
-    /* 입력폼 유형 : 파일업로드 */
-      /* 파일첨부 */
-  /* ================================================ */
-  /* ================================================ */
-  
+/* 요약 */
+  /* 입력폼 유형 : 단일선택 */
+    /* 홈페이지 유형 */
+  /* 입력폼 유형 : 단답형 */
+    /* 성함/회사명/브랜드명 */
+    /* 연락처 */
+    /* 예산 */
+    /* 레퍼런스 사이트 URL */
+    /* 현재 사이트 URL */
+  /* 입력폼 유형 : 이메일 */
+    /* 이메일 */
+  /* 입력폼 유형 : 여러줄 */
+    /* 문의내용 */
+  /* 입력폼 유형 : 파일업로드 */
+    /* 파일첨부 */
+/* ================================================ */
+/* ================================================ */
+
+
+<style>  
   /* H2 타이틀 텍스트 스타일 */
   #radio_3510i2h87B::before {
     content: '사이트 유형 *'; /* 텍스트 */
@@ -125,7 +126,7 @@
   /* 입력폼 셀 배경 및 테두리 */
   .form-group input,
   .form-group textarea {
-    background-color: #0f0f0f !important;
+    background-color: #1B1D1F !important;
     border: 1px solid #818181 !important;
     color: #fff !important;
     padding: 10px !important;
@@ -141,7 +142,7 @@
   
   /* 입력폼 내 브라우저 자동 완성된 값에 대한 스타일 */
   input:-webkit-autofill {
-    background-color: #0f0f0f !important;
+    background-color: #1B1D1F !important;
     color: #fff !important;
     border: 1px solid #818181 !important;
     -webkit-text-fill-color: #fff !important; /* 텍스트 색상 */
@@ -162,7 +163,7 @@
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color: #0F0F0F; /* 배경색 */
+    background-color: #1B1D1F; /* 배경색 */
     border: 1px solid #818181; /* 테두리선색 */
     width: 98%; /* 1행 가로(width) 100% 중 98% 전체 사용 */
     height: 70px; /* 높이 설정 */
@@ -186,9 +187,9 @@
 
   /* 파일 첨부 버튼 hover 스타일 */
   .holder._holder .form_widget_btn:hover {
-    background-color: #0f0f0f !important; /* hover 시 배경색 */
+    background-color: #1B1D1F !important; /* hover 시 배경색 */
     color: #fff !important; /* hover 시 텍스트 색상 */
-    border: 1px solid #0049FF !important; /* 테두리 색상 */
+    border: 1.3px solid #0049FF !important; /* 테두리 색상 */
     transition: background-color 0.3s, color 0.3s; /* 부드러운 전환 효과 */
   }
 
@@ -239,11 +240,11 @@
     line-height: 34px; /* 텍스트 세로 중앙 정렬 */
   }
 
-  /* hover 시 버튼 스타일 */
+  /* 보내기 버튼 hover 스타일 */
   .form a.btn.btn-primary:hover {
-    background-color: #0f0f0f !important; /* hover 시 배경색 */
+    background-color: #1B1D1F !important; /* hover 시 배경색 */
     color: #FFF !important; /* hover 시 텍스트 색상 */
-    border: 1px solid #0049FF !important; /* hover 시 테두리 색상 */
+    border: 2px solid #0049FF !important; /* hover 시 테두리 색상 */
 	transition: background-color 0.3s, color 0.3s; /* 부드러운 전환 효과 */
   }
   
