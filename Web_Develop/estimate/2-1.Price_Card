@@ -1,0 +1,178 @@
+/* 텍스트 위젯에 표 삽입하여 Card 형태의 가격표 생성 + 아래 코드 위젯 작성 */
+/* Card Hover 효과 + Card Best 띠 표시 등.. */
+
+
+<style>
+/* 공통 카드 스타일 */
+#w202411032ed3f4013d35f, #w202411036fb87ed2aad16, #w202411038a40ece6285e8 {
+  background-color: #26282B ;
+  border-radius: 15px ;
+  padding: 20px ;
+  color: white ;
+  /* transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.5s ease !important; /* HOVER 애니메이션 */ 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+#w202411032ed3f4013d35f:hover, #w202411036fb87ed2aad16:hover, #w202411038a40ece6285e8:hover {
+  background-color: #0049FF !important;
+  /* transform: scale(1.01) !important; /* HOVER 애니메이션 확대값 */ 
+}
+
+
+/* 아이콘 스타일 */
+.check-icon {
+  display: inline-block ;
+  width: 18px ;
+  height: 18px t;
+  border-radius: 50% ;
+  background-color: #3a3a3a !important; /* 기본 회색 배경 */
+  margin-right: 8px ;
+  position: relative ;
+  font-size: 12px ;
+  color: black ;
+  font-weight: bold;
+  text-align: center;
+  line-height: 18px;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+  
+/* 체크 아이콘 스타일 */
+.check-icon {
+  display: inline-block !important;
+  width: 14px !important; /* 크기를 약간 줄임 */
+  height: 14px !important;
+  border-radius: 50% !important;
+  background-color: #3a3a3a !important; /* 기본 회색 배경 */
+  margin-right: 6px !important;
+  position: relative !important;
+  top: 0px; /* 약간 위로 위치 조정 */
+  font-size: 10px !important; /* 체크 표시 크기 줄임 */
+  color: black !important;
+  font-weight: bold;
+  text-align: center;
+  line-height: 14px; /* 체크 아이콘의 높이와 일치 */
+  transition: background-color 0.1s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+/* 호버 시 아이콘 스타일 변경 */
+#w202411032ed3f4013d35f:hover .check-icon,
+#w202411036fb87ed2aad16:hover .check-icon,
+#w202411038a40ece6285e8:hover .check-icon {
+  background-color: #fff !important;
+  color: #0049FF !important;
+}
+  
+/* 가로선 스타일 - 공통 설정 */
+#w202411032ed3f4013d35f hr, 
+#w202411036fb87ed2aad16 hr, 
+#w202411038a40ece6285e8 hr {
+  border: none;
+  height: 1px; /* 기본 두께 */
+  background-color: #B8B8B8; /* 기본 가로선 색상 */
+  opacity: 0.3;
+  margin-left: 0%; /* 좌측 길이 조정 */
+  margin-right: 0%; /* 우측 길이 조정 */
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+/* 가로선 스타일 - 개별 설정 (우선순위가 공통 설정보다 높음) */
+
+/* STANDARD 카드 가로선 */
+  /*#w202411032ed3f4013d35f hr {
+  /*background-color: #838383; /* 원하는 색상 */
+  /*margin-left: 15%; /* 원하는 좌측 길이 */
+  /*margin-right: 15%; /* 원하는 우측 길이 */
+/*} */
+
+/* DELUXE 카드 가로선 */
+/*#w202411036fb87ed2aad16 hr {
+  /*background-color: #838383; /* 원하는 색상 */
+  /*margin-left: 20%; /* 원하는 좌측 길이 */
+  /*margin-right: 20%; /* 원하는 우측 길이 */
+/*} */
+
+/* PREMIUM 카드 가로선 */
+/*#w202411038a40ece6285e8 hr {
+  /*background-color: #838383; /* 원하는 색상 */
+  /*margin-left: 25%; /* 원하는 좌측 길이 */
+  /*margin-right: 25%; /* 원하는 우측 길이 */
+/*} */
+  
+
+/* DELUXE 카드 BEST 띠 스타일 - 우측 위 */
+  #w202411036fb87ed2aad16::before {
+    content: "BEST";
+    position: absolute;
+    top: 10px;
+    right: -20px; /* 기존 left에서 right로 변경 */
+    background-color: #ff4d4d; /* 띠의 배경색 */
+    color: white;
+    padding: 8px 30px; /* 상하, 좌우 길이 */
+    font-size: 14px;
+    font-weight: bold;
+    transform: rotate(45deg); /* 사선으로 회전 */
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+/* 반짝이는 애니메이션 정의 */
+@keyframes glow {
+    0%, 100% { opacity: 1; box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+    50% { opacity: 0.85; box-shadow: 0 0 15px rgba(255, 255, 255, 0.9); }
+}
+
+/* DELUXE 카드에 hover 시 "BEST" 띠 반짝임 효과 */
+#w202411036fb87ed2aad16:hover::before {
+    animation: glow 1.5s ease-in-out infinite;
+}
+
+/* 카드가 위치를 잡도록 relative 설정 */
+#w202411036fb87ed2aad16 {
+    position: relative;
+}
+
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // 각 카드 ID와 타겟 텍스트 배열
+  const cards = [
+    {
+      id: "w202411032ed3f4013d35f",
+      items: ["페이지", "제작 기간", "수정 횟수", "페이지 추가"]
+    },
+    {
+      id: "w202411036fb87ed2aad16",
+      items: ["페이지", "제작 기간", "수정 횟수", "페이지 추가"]
+    },
+    {
+      id: "w202411038a40ece6285e8",
+      items: ["페이지", "제작 기간", "수정 횟수", "페이지 추가"]
+    }
+  ];
+
+  // 각 카드의 항목에 체크 아이콘 추가
+  cards.forEach(card => {
+    const cardElement = document.querySelector(`#${card.id} .text-table table tbody`); 
+    if (cardElement) {
+      const rows = cardElement.querySelectorAll("tr");
+
+      // 타겟 텍스트에만 아이콘 추가
+      card.items.forEach(itemText => {
+        rows.forEach(row => {
+          const cells = row.querySelectorAll("td p"); 
+          cells.forEach(cell => {
+            if (cell.textContent.trim() === itemText) {
+              const checkIcon = document.createElement("span");
+              checkIcon.className = "check-icon";
+              checkIcon.textContent = "✓"; // 원하는 기호로 변경 가능
+              cell.prepend(checkIcon); // 아이콘을 텍스트 앞에 추가
+            }
+          });
+        });
+      });
+    }
+  });
+});
+</script>
