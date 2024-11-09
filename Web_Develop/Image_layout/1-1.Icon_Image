@@ -1,0 +1,48 @@
+<style> 
+  /* 공통 스타일로 배경색과 크기 조절 적용 */
+  .EUM-BOX {
+    background-color: #F2F4F6 !important; /* 배경색 설정 */
+    padding: 15px; /* 여백 추가 (선택 사항) */
+    border-radius: 8px; /* 모서리를 둥글게 (선택 사항) */
+    width: 160px !important; /* 너비 조정 (원하는 값으로 변경 가능) */
+    height: auto !important; /* 높이를 자동 조정 (너비에 비례) */
+    display: inline-block; /* 필요한 경우 적용 */
+  }
+
+  /* 텍스트 색상 변경 */
+  .EUM-BOX-TEXT {
+    color: #464C53 !important; /* 텍스트 색상 설정 */
+  }
+   
+  /* 기본 상태에서 투명한 테두리를 설정 */
+  .EUM-ICON { 
+    border: 2px solid transparent; /* 투명한 테두리 */
+    transition: border-color 0.3s ease; /* 테두리 색상 변화 시 애니메이션 */
+  }
+  
+  /* hover 시 테두리 색상만 변경 */
+  .EUM-ICON:hover { 
+    border-color: #464C53 !important; /* 테두리 색상 변경 */
+  }
+</style>
+
+<script> 
+  document.addEventListener("DOMContentLoaded", function() { 
+    // 각 고유 ID에 대해 명시적으로 클래스를 추가
+    var ids = [
+      "w20241109743040dfc1830", 
+      "w20241109077ff01fb9bf3", 
+      "w202411092eac6654d5db4", 
+      "w202411098852bfe2129d6", 
+      "w202411094cb9ae5370ba6", 
+      "w2024110977f90ff579e20"
+    ];
+
+    ids.forEach(function(id) { 
+        var element = document.getElementById(id);
+        if (element) {
+            element.classList.add("EUM-BOX", "EUM-ICON", "EUM-BOX-TEXT"); // 공통 클래스 추가
+        }
+    }); 
+});
+</script>
