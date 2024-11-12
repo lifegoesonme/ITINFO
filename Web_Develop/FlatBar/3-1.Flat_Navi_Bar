@@ -1,0 +1,65 @@
+/* https://eumdesign.imweb.me/service 페이지에 적용된 디자인 */
+/* 페이지 이동없이, 기존 아임웹 기능인 텍스트 링크 + Section ID 적용 */
+/* 코드로는 활성화된 섹션의 메뉴바의 텍스트만 짙은 검정색 텍스트, 나머지는 회색 텍스트 */
+
+<script>
+// 네비게이션 텍스트와 연결된 섹션 매핑
+const sectionMappings = {
+  '주요기능': {
+    element: document.querySelector('a[href="#s20241006992778ed1c7b3"] span') || document.querySelector('a[href="#s20241006992778ed1c7b3"]'),
+    section: document.querySelector('#s20241006992778ed1c7b3')
+  },
+  '제작절차': {
+    element: document.querySelector('a[href="#s202410067f282df2de9a5"] span') || document.querySelector('a[href="#s202410067f282df2de9a5"]'),
+    section: document.querySelector('#s202410067f282df2de9a5')
+  },
+  '비용안내': {
+    element: document.querySelector('a[href="#s2024100925cace6f988cc"] span') || document.querySelector('a[href="#s2024100925cace6f988cc"]'),
+    section: document.querySelector('#s2024100925cace6f988cc')
+  }
+};
+
+// 초기 상태에서 모든 텍스트를 기본 색상으로 설정
+function initializeNavColors() {
+  Object.values(sectionMappings).forEach(nav => {
+    if (nav.element) {
+      nav.element.style.color = '#1B1D1F'; // 초기 색상 설정
+    }
+  });
+}
+
+// 모든 네비게이션 텍스트 색상을 비활성 상태로 설정
+function resetNavColors() {
+  Object.values(sectionMappings).forEach(nav => {
+    if (nav.element) {
+      nav.element.style.color = '#9EA4AA'; // 기본 비활성 색상 설정
+    }
+  });
+}
+
+// 초기 상태에서 모든 텍스트를 기본 색상으로 설정
+initializeNavColors();
+
+// 스크롤 이벤트 및 섹션 감지
+window.addEventListener('scroll', () => {
+  let activeSection = null;
+
+  // 뷰포트 중앙에 위치한 섹션을 감지
+  Object.values(sectionMappings).forEach(nav => {
+    const rect = nav.section.getBoundingClientRect();
+    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+      activeSection = nav;
+    }
+  });
+
+  // 네비게이션 색상 설정
+  if (activeSection && activeSection.element) {
+    resetNavColors(); // 모든 네비게이션을 기본 색상으로 초기화
+    activeSection.element.style.color = '#1B1D1F'; // 활성화된 텍스트의 색상 변경
+  } else if (window.scrollY === 0) {
+    // 스크롤이 최상단에 도달했을 때 모든 텍스트 색상을 초기 상태로 설정
+    initializeNavColors();
+  }
+});
+
+</script>
