@@ -1,5 +1,7 @@
 /* 어두운 배경에 어울리는 플랫 메뉴바 */
 /* 포인트 컬러 : 0049FF */
+/* eumdesign.imweb.me의 고객센터 페이지에 적용된 디자인 */
+/* 페이지 이동이 필요한 플랫 메뉴바 */
 
 /* ================================================ */
 /* 고객센터 페이지 */
@@ -152,8 +154,8 @@
     <!-- 플랫메뉴바 -->
     <div class="menu-bar">
         <ul>
-            <li><a href="https://eumcobiz68378.imweb.me/estimate">견적문의</a></li>
-            <li><a href="https://eumcobiz68378.imweb.me/faq" class="active">자주묻는질문</a></li>
+            <li><a href="https://eumdesign.imweb.me/estimate">견적문의</a></li>
+            <li><a href="https://eumdesign.imweb.me/faq" class="active">자주묻는질문</a></li>
         </ul>
     </div>
 </body>
