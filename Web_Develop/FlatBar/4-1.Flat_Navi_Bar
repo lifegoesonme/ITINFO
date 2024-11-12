@@ -1,0 +1,50 @@
+/* https://eumdesign.imweb.me/portfolio-all 페이지에 적용된 디자인 */
+/* https://eumdesign.imweb.me/service 페이지에 적용된 3-1.Flat_Navi_Bar와는 아주 조금 다른 코드임 */
+/* 페이지 이동없이, 기존 아임웹 기능인 텍스트 링크 + Section ID 적용 */
+/* 코드로는 활성화된 섹션의 메뉴바의 텍스트만 짙은 검정색 텍스트, 나머지는 회색 텍스트 */
+
+
+<script>
+// 네비게이션 텍스트와 연관된 섹션 매핑
+const navItems = {
+  '홈페이지': {
+    element: document.querySelector('a[href="#s2024100664bf5c31be581"] span'),
+    section: document.querySelector('#s2024100664bf5c31be581')
+  },
+  '랜딩페이지': {
+    element: document.querySelector('a[href="#s2024101241c2f1b4fa8c4"] span'),
+    section: document.querySelector('#s2024101241c2f1b4fa8c4')
+  }
+};
+
+// 기본 텍스트 색상 설정 및 스타일 초기화 함수
+function resetNavColors() {
+  Object.values(navItems).forEach(nav => {
+    if (nav.element) {
+      nav.element.style.color = '#9EA4AA'; // 기본 검정색 설정
+    }
+  });
+}
+
+// 스크롤 이벤트 및 섹션 감지
+window.addEventListener('scroll', () => {
+  let activeSection = null;
+
+  // 뷰포트 중앙에 위치한 섹션 감지
+  Object.values(navItems).forEach(nav => {
+    const rect = nav.section.getBoundingClientRect();
+    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+      activeSection = nav;
+    }
+  });
+
+  // 네비게이션 색상 설정
+  if (activeSection && activeSection.element) {
+    resetNavColors(); // 모든 네비게이션을 기본 색상으로 초기화
+    activeSection.element.style.color = '#1B1D1F'; // 활성화된 텍스트의 색상 변경
+  } else {
+    // 활성화된 섹션이 없는 경우(예: 스크롤이 최상단에 있을 때)
+    resetNavColors();
+  }
+});
+</script>
