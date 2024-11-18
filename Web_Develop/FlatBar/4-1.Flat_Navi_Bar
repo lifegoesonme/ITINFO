@@ -1,50 +1,47 @@
-/* https://eumdesign.imweb.me/portfolio-all 페이지에 적용된 디자인 */
-/* https://eumdesign.imweb.me/service 페이지에 적용된 3-1.Flat_Navi_Bar와는 아주 조금 다른 코드임 */
-/* 페이지 이동없이, 기존 아임웹 기능인 텍스트 링크 + Section ID 적용 */
-/* 코드로는 활성화된 섹션의 메뉴바의 텍스트만 짙은 검정색 텍스트, 나머지는 회색 텍스트 */
+/* https://eumdesign.imweb.me/portfolio-homepage 페이지에 적용된 디자인 */
+/* https://eumdesign.imweb.me/portfolio-randing 페이지에 적용된 디자인 */
+/* https://eumdesign.imweb.me/service 페이지에 적용된 3-1.Flat_Navi_Bar와는 다른 코드임 */
+/* 한 페이지 내 섹션ID값으로 이동하는게 아닌, 현재 페이지에 맞는 네비게이션 바 안의 연관 텍스트의 컬러 값 조정 */
 
 
 <script>
-// 네비게이션 텍스트와 연관된 섹션 매핑
-const navItems = {
-  '홈페이지': {
-    element: document.querySelector('a[href="#s2024100664bf5c31be581"] span'),
-    section: document.querySelector('#s2024100664bf5c31be581')
-  },
-  '랜딩페이지': {
-    element: document.querySelector('a[href="#s2024101241c2f1b4fa8c4"] span'),
-    section: document.querySelector('#s2024101241c2f1b4fa8c4')
-  }
-};
+  document.addEventListener("DOMContentLoaded", function() {
+    // 현재 페이지 URL 가져오기
+    const currentUrl = window.location.href;
 
-// 기본 텍스트 색상 설정 및 스타일 초기화 함수
-function resetNavColors() {
-  Object.values(navItems).forEach(nav => {
-    if (nav.element) {
-      nav.element.style.color = '#9EA4AA'; // 기본 검정색 설정
+    // '홈페이지'와 '랜딩페이지' 텍스트 요소를 선택
+    const homepageText = document.querySelector('a[href="https://eumdesign.imweb.me/portfolio-homepage"] span');
+    const landingPageText = document.querySelector('a[href="https://eumdesign.imweb.me/portfolio-randing"] span');
+
+    // 현재 URL에 따라 텍스트 색상 변경 ★ 결국 현재 URL의 링크와 같은 링크가 연결된 첫번째 단어에 아래 색상값을 매기겠다
+    if (currentUrl.includes("portfolio-homepage")) {
+      if (homepageText) {
+        homepageText.style.color = '#1B1D1F'; // '홈페이지' 텍스트 활성화
+      }
+      if (landingPageText) {
+        landingPageText.style.color = '#9EA4AA'; // '랜딩페이지' 텍스트 비활성화
+      }
+    } else if (currentUrl.includes("portfolio-randing")) {
+      if (homepageText) {
+        homepageText.style.color = '#9EA4AA'; // '홈페이지' 텍스트 비활성화
+      }
+      if (landingPageText) {
+        landingPageText.style.color = '#1B1D1F'; // '랜딩페이지' 텍스트 활성화
+      }
     }
   });
-}
-
-// 스크롤 이벤트 및 섹션 감지
-window.addEventListener('scroll', () => {
-  let activeSection = null;
-
-  // 뷰포트 중앙에 위치한 섹션 감지
-  Object.values(navItems).forEach(nav => {
-    const rect = nav.section.getBoundingClientRect();
-    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-      activeSection = nav;
-    }
-  });
-
-  // 네비게이션 색상 설정
-  if (activeSection && activeSection.element) {
-    resetNavColors(); // 모든 네비게이션을 기본 색상으로 초기화
-    activeSection.element.style.color = '#1B1D1F'; // 활성화된 텍스트의 색상 변경
-  } else {
-    // 활성화된 섹션이 없는 경우(예: 스크롤이 최상단에 있을 때)
-    resetNavColors();
-  }
-});
 </script>
+
+
+
+------------------------------------------------------------------
+/* 만약 '홈페이지'라는 단어가 세 번 등장하고 그중 첫 번째와 세 번째 위치한 단어의 링크가 https://eumdesign.imweb.me/portfolio-homepage로 연결되어 있다면, 다음과 같이 동작합니다: */
+/* document.querySelector('a[href="https://eumdesign.imweb.me/portfolio-homepage"] span')는 첫 번째로 해당 URL과 매칭되는 요소를 선택합니다. */
+/* 만약 두 개 이상의 요소를 모두 선택하고 스타일을 적용하려면, querySelectorAll을 사용해야 합니다. querySelectorAll은 조건과 일치하는 모든 요소를 선택하여 NodeList로 반환합니다. 그런 다음, 각 요소에 대해 색상을 적용할 수 있습니다. */
+
+const homepageTexts = document.querySelectorAll('a[href="https://eumdesign.imweb.me/portfolio-homepage"] span');
+homepageTexts.forEach(text => {
+    text.style.color = '#1B1D1F';
+});
+
+/* 이 코드처럼 querySelectorAll을 사용하면 '홈페이지'라는 단어가 여러 곳에 나타나도 href 속성이 https://eumdesign.imweb.me/portfolio-homepage인 모든 링크에 해당하는 텍스트 요소에 색상이 적용됩니다. 따라서 1번째와 3번째 위치한 '홈페이지' 텍스트에 컬러가 적용됩니다. */
