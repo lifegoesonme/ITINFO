@@ -1,0 +1,1156 @@
+/* https://eumdesign.imweb.me/management-essential 페이지에 적용된 디자인 */
+/* https://eumdesign.imweb.me/management-shoppingmall 페이지에 적용된 디자인 */
+/* https://eumdesign.imweb.me/management-reservation 페이지에 적용된 디자인 */
+/* https://eumdesign.imweb.me/management-contsell 페이지에 적용된 디자인 */
+/* 페이지 이동 기능 추가 */
+
+==========================================================================
+/* https://eumdesign.imweb.me/management-essential 페이지에 적용된 디자인 */
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 운영 필수 체크 리스트 페이지</title>
+    <style>
+        /* 기본 스타일 설정 */
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        /* 좌측 사이드 네비게이션 스타일 */
+        .side-nav {
+            width: 260px;
+            padding: 20px;
+            font-family: 'Pretendard', sans-serif;
+            color: #fff;
+        }
+
+        .side-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 아코디언 헤더 스타일 */
+        .accordion-header {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 5px 0;
+            position: relative;
+            color: #fff;
+            transition: color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .accordion-header:hover {
+            color: #0049FF;
+        }
+
+        /* 화살표 스타일 */
+        .accordion-header::after {
+            content: "▶";
+            font-size: 12px;
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            transition: transform 0.4s ease, color 0.3s ease;
+            color: #666;
+        }
+
+        .accordion-header.active::after {
+            content: "▼";
+            color: #0049FF;
+        }
+
+        /* 최상위 카테고리 세로선 */
+        .side-nav > ul > .sub-menu {
+            display: none;
+            padding-left: 15px;
+            margin-top: 5px;
+            border-left: 2px solid #444;
+        }
+
+        /* 2뎁스 개별 세로선 */
+        .sub-menu .sub-menu > li {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .sub-menu .sub-menu > li::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: -5px;
+            bottom: -5px;
+            width: 2px;
+            background: linear-gradient(to bottom, #444, #444);
+            transition: background-color 0.3s ease;
+        }
+
+        /* 클릭된 항목의 세로선 및 텍스트 강조 */
+        .sub-menu .sub-menu li.active::before {
+            background: linear-gradient(to bottom, #0049FF, #0049FF);
+        }
+
+        .sub-menu li {
+            padding: 5px 0;
+            padding-left: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .sub-menu li:hover {
+            color: #0049FF;
+        }
+
+        /* 텍스트 강조 스타일 */
+        .highlighted-text span {
+            color: #0049FF;
+        }
+
+        /* 우측 네모 박스 텍스트 하이라이트 스타일 */
+        .highlighted-box {
+            color: #0049FF;
+        }
+    </style>
+</head>
+<body>
+    <!-- 사이드 네비게이션 -->
+    <nav class="side-nav">
+        <ul>
+            <!-- 아코디언 메뉴1 - 웹 운영 필수 체크 리스트 -->
+            <li class="accordion-header active">웹 운영 필수 체크 리스트</li> <!-- 기본 활성화 상태로 시작 -->
+            <ul class="sub-menu" style="display: block;"> <!-- 기본으로 열림 상태, 2뎁스까지만 보이게 설정 -->
+                <li class="accordion-header">포털사이트 사이트 노출</li>
+                <ul class="sub-menu" style="display: none;">
+                    <li data-target="w202410269c3d7aafab32d">네이버(Naver) 사이트 등록</li>
+                    <li data-target="w20241026fa4925cfe9811">구글(Google) 사이트 등록</li>
+                    <li data-target="w202410269d1760aa98da4">다음(Daum,Nate) 사이트 등록</li>
+                </ul>
+                <li class="accordion-header">검색 엔진 최적화(SEO)</li>
+                <ul class="sub-menu" style="display: none;">
+                    <li data-target="w20241026256473a7f6c45">검색엔진 최적화(SEO)</li>
+                    <li data-target="w20241026fd6fdef537698">네이버에 내 사이트가 왜 우선으로 나오지 않나요?</li>
+                    <li data-target="w202410268dac5e42f1656">사이트 설명이 네이버나 구글 등 검색결과에 반영되지 않습니다</li>
+                    <li data-target="w20241026147b5c5eaf295">네이버 검색광고(파워링크)보다 위에 노출되게 하기</li>
+                    <li data-target="w2024102630176dfffbdf1">사이트 정보 재수집 요청 및 수집주기 변경하기</li>
+                </ul>
+                <li class="accordion-header">사이트 자동 알림받기</li>
+                <ul class="sub-menu" style="display: none;">
+                    <li data-target="w20241026b98138060aa4d">자동 메일 발송 설정하기</li>
+                    <li data-target="w20241026db580332313f7">카톡/문자 알림 받기 (유료)</li>
+                </ul>
+                <li class="accordion-header">보안인증서(SSL)</li>
+                <ul class="sub-menu" style="display: none;">
+                    <li data-target="w202410263b17556442b4f">SSL (보안인증서) 알아보기</li>
+                </ul>
+            </ul>
+          
+            <!-- 아코디언 메뉴2 - 쇼핑몰 운영 방법 -->
+            <li class="accordion-header" id="shopping-header">쇼핑몰 운영 방법</li>
+
+            <!-- 아코디언 메뉴3 - 숙박/예약 운영 방법 -->
+            <li class="accordion-header" id="reservation-header">숙박/예약 운영 방법</li>
+
+            <!-- 아코디언 메뉴4 - 온라인 강의 사이트 운영 -->
+            <li class="accordion-header" id="contsell-header">온라인 강의 사이트 운영</li>
+        </ul>
+    </nav>
+
+<script>
+    let previousHighlighted;
+    let previousBoxHighlighted;
+
+    // 상위 뎁스 초기화 함수
+    function resetSubMenus() {
+        document.querySelectorAll('.accordion-header.active').forEach(header => {
+            header.classList.remove('active');
+            header.nextElementSibling.style.display = 'none';
+        });
+    }
+
+    // 아코디언 메뉴 클릭 이벤트 설정
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            // 페이지 이동 기능 추가
+            if (header.id === "shopping-header") {
+                window.location.href = "https://eumdesign.imweb.me/management-shoppingmall";
+                return;
+            } else if (header.id === "reservation-header") {
+                window.location.href = "https://eumdesign.imweb.me/management-reservation";
+                return;
+            } else if (header.id === "contsell-header") {
+                window.location.href = "https://eumdesign.imweb.me/management-contsell";
+                return;
+            }
+
+            const subMenu = header.nextElementSibling;
+
+            // 현재 클릭한 뎁스만 열고 닫기
+            header.classList.toggle('active');
+            subMenu.style.display = header.classList.contains('active') ? 'block' : 'none';
+
+            // 3뎁스 초기화
+            if (header.classList.contains('active')) {
+                subMenu.querySelectorAll('.sub-menu').forEach(innerSub => {
+                    innerSub.style.display = 'none';
+                });
+            }
+        });
+    });
+
+    // 세부 항목 클릭 이벤트 설정 (고유 ID 기반 중앙 이동 및 강조 효과)
+    document.querySelectorAll('.sub-menu .sub-menu > li').forEach(item => {
+        item.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+            const targetSection = document.getElementById("text_" + targetId);
+
+            // 이전 강조 제거
+            if (previousHighlighted) {
+                previousHighlighted.classList.remove('active');
+            }
+
+            // 현재 항목 세로선 강조
+            this.classList.add('active');
+            previousHighlighted = this;
+
+            // 우측 네모 박스 텍스트 색상 하이라이트 적용 및 중앙 이동
+            if (previousBoxHighlighted) {
+                previousBoxHighlighted.classList.remove('highlighted-box');
+            }
+            if (targetSection) {
+                targetSection.classList.add('highlighted-box');
+                previousBoxHighlighted = targetSection;
+
+                // 스크롤 이동: 우측 박스를 중앙에 위치시키기
+                const yOffset = (window.innerHeight / 2) - (targetSection.getBoundingClientRect().height / 2);
+                const y = targetSection.getBoundingClientRect().top + window.pageYOffset - yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+        });
+    });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // URL과 1뎁스 메뉴 매핑
+    const urlToHeaderMap = {
+      "management-essential": "웹 운영 필수 체크 리스트",
+      "management-shoppingmall": "쇼핑몰 운영 방법",
+      "management-reservation": "숙박/예약 운영 방법",
+      "management-contsell": "온라인 강의 사이트 운영",
+    };
+
+    // 현재 URL 가져오기
+    const currentUrl = window.location.href;
+
+    // URL에서 해당되는 1뎁스 텍스트 확인
+    const matchedHeaderText = Object.keys(urlToHeaderMap).find(key =>
+      currentUrl.includes(key)
+    );
+
+    // 해당 1뎁스 텍스트가 존재하면 기본적으로 하이라이트 추가
+    if (matchedHeaderText) {
+      document.querySelectorAll(".accordion-header").forEach(header => {
+        if (header.textContent.trim() === urlToHeaderMap[matchedHeaderText]) {
+          // 해당 1뎁스 기본 하이라이트 적용
+          header.style.color = "#0049FF";
+        }
+      });
+    }
+
+    // 아코디언 메뉴 열고 닫힘에 따라 하이라이트 적용
+    document.querySelectorAll(".accordion-header").forEach(header => {
+      header.addEventListener("click", () => {
+        // 하위 메뉴가 열려 있는지 확인
+        const isOpen = header.classList.contains("active");
+
+        if (isOpen) {
+          // 하이라이트 추가
+          header.style.color = "#0049FF";
+        } else {
+          // 하이라이트 제거
+          header.style.color = "#fff";
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==========================================================================
+/* https://eumdesign.imweb.me/management-shoppingmall 페이지에 적용된 디자인 */
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쇼핑몰 운영 방법 페이지</title>
+    <style>
+        /* 기본 스타일 설정 */
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        /* 좌측 사이드 네비게이션 스타일 */
+        .side-nav {
+            width: 260px;
+            padding: 20px;
+            font-family: 'Pretendard', sans-serif;
+            color: #fff;
+        }
+
+        .side-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 아코디언 헤더 스타일 */
+        .accordion-header {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 5px 0;
+            position: relative;
+            color: #fff;
+            transition: color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .accordion-header:hover {
+            color: #0049FF;
+        }
+
+        /* 화살표 스타일 */
+        .accordion-header::after {
+            content: "▶";
+            font-size: 12px;
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            transition: transform 0.4s ease, color 0.3s ease;
+            color: #666;
+        }
+
+        .accordion-header.active::after {
+            content: "▼";
+            color: #0049FF;
+        }
+
+        /* 최상위 카테고리 세로선 */
+        .side-nav > ul > .sub-menu {
+            display: none;
+            padding-left: 15px;
+            margin-top: 5px;
+            border-left: 2px solid #444;
+        }
+
+        /* 2뎁스 개별 세로선 */
+        .sub-menu .sub-menu > li {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .sub-menu .sub-menu > li::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: -5px;
+            bottom: -5px;
+            width: 2px;
+            background: linear-gradient(to bottom, #444, #444);
+            transition: background-color 0.3s ease;
+        }
+
+        /* 클릭된 항목의 세로선 및 텍스트 강조 */
+        .sub-menu .sub-menu li.active::before {
+            background: linear-gradient(to bottom, #0049FF, #0049FF);
+        }
+
+        .sub-menu li {
+            padding: 5px 0;
+            padding-left: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .sub-menu li:hover {
+            color: #0049FF;
+        }
+
+        /* 텍스트 강조 스타일 */
+        .highlighted-text span {
+            color: #0049FF !important;
+        }
+
+        /* 우측 네모 박스 텍스트 하이라이트 스타일 */
+        .highlighted-box {
+            color: #0049FF !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- 사이드 네비게이션 -->
+    <nav class="side-nav">
+        <ul>
+            <!-- 아코디언 메뉴1 - 웹 운영 필수 체크 리스트 -->
+            <li class="accordion-header" id="essential-header">웹 운영 필수 체크 리스트</li>
+
+            <!-- 아코디언 메뉴2 - 쇼핑몰 운영 방법 -->
+            <li class="accordion-header active">쇼핑몰 운영 방법</li>
+            <ul class="sub-menu" style="display: block;">
+                <li class="accordion-header">필수 체크 사항</li>
+                <ul class="sub-menu" style="display: none;">
+                    <li data-target="w20241027140816aa50074">약관 설정 및 SSL 설치하기</li>
+                    <li data-target="w202410275cf009b72d020">결제수단 신청 및 설정하기</li>
+                    <li data-target="w2024102701c178b97ffc0">네이버페이, 간편구매 신청하기</li>
+                    <li data-target="w20241027d9446c50e5a70">실시간 상담 설치하기</li>
+                    <li data-target="w20241027db4447790f9f1">PG 심사 통과를 위한 필수 확인사항</li>
+                </ul>
+                <li class="accordion-header">상품 관리</li>
+                <ul class="sub-menu" style="display: none;">
+                    <li data-target="w20241027d8c91ff4750d9">상품 등록 및 진열 방법</li>
+                </ul>
+                <li class="accordion-header">주문 및 고객 관리</li>
+                <ul class="sub-menu" style="display: none;">
+                    <li data-target="w202410275a2d009afa210">주문 관리하기</li>
+                    <li data-target="w202410271f458b5c004ee">주문 처리하기</li>
+                    <li data-target="w20241027ec67c830d7f9a">상품 문의 관리하기</li>
+                    <li data-target="w2024102747caac1c9a0b4">구매평 관리하기</li>
+                    <li data-target="w20241027d5b079f392018">쿠폰 생성 및 관리하기</li>
+                </ul>
+                <li class="accordion-header">쇼핑 설정 도움말 BEST</li>
+                <ul class="sub-menu" style="display: none;">
+                    <li data-target="w20241027fbc965e08be55">쇼핑 설정 도움말 BEST</li>
+                </ul>
+            </ul>
+
+            <!-- 아코디언 메뉴3 - 숙박/예약 운영 방법 -->
+            <li class="accordion-header" id="reservation-header">숙박/예약 운영 방법</li>
+
+            <!-- 아코디언 메뉴4 - 온라인 강의 사이트 운영 -->
+            <li class="accordion-header" id="contsell-header">온라인 강의 사이트 운영</li>
+        </ul>
+    </nav>
+
+<script>
+let previousHighlighted;
+let previousBoxHighlighted;
+
+// 상위 뎁스 초기화 함수
+function resetSubMenus() {
+    document.querySelectorAll('.accordion-header.active').forEach(header => {
+        header.classList.remove('active');
+        header.nextElementSibling.style.display = 'none';
+    });
+}
+
+// 아코디언 메뉴 클릭 이벤트 설정
+document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+        // 페이지 이동 기능 추가
+          if (header.id === "essential-header") {
+            window.location.href = "https://eumdesign.imweb.me/management-essential";
+            return;
+        } else if (header.id === "reservation-header") {
+            window.location.href = "https://eumdesign.imweb.me/management-reservation";
+            return;
+        } else if (header.id === "contsell-header") {
+            window.location.href = "https://eumdesign.imweb.me/management-contsell";
+            return;
+        }
+
+        const subMenu = header.nextElementSibling;
+
+        // 현재 클릭한 뎁스만 열고 닫기
+        header.classList.toggle('active');
+        subMenu.style.display = header.classList.contains('active') ? 'block' : 'none';
+
+        // 3뎁스 초기화
+        if (header.classList.contains('active')) {
+            subMenu.querySelectorAll('.sub-menu').forEach(innerSub => {
+                innerSub.style.display = 'none';
+            });
+        }
+    });
+});
+
+// 세부 항목 클릭 이벤트 설정 (네모 박스 텍스트 하이라이트)
+document.querySelectorAll('.sub-menu .sub-menu > li').forEach(item => {
+    item.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const targetWidget = document.getElementById(targetId);
+
+        if (targetWidget) {
+            // text_ 접두어가 붙은 id값 찾기
+            const targetText = targetWidget.querySelector(`#text_${targetId}`);
+
+            // 이전 강조 제거
+            if (previousHighlighted) {
+                previousHighlighted.classList.remove('active');
+            }
+            this.classList.add('active');
+            previousHighlighted = this;
+
+            // 우측 네모 박스 텍스트 색상 하이라이트 적용
+            if (previousBoxHighlighted) {
+                previousBoxHighlighted.classList.remove('highlighted-box');
+            }
+            if (targetText) {
+                targetText.classList.add('highlighted-box');
+                previousBoxHighlighted = targetText;
+
+                // 스크롤 이동: 우측 박스를 중앙에 위치시키기
+                const yOffset = (window.innerHeight / 2) - (targetText.getBoundingClientRect().height / 2);
+                const y = targetText.getBoundingClientRect().top + window.pageYOffset - yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+        }
+    });
+});
+  document.addEventListener("DOMContentLoaded", function () {
+    // URL과 1뎁스 메뉴 매핑
+    const urlToHeaderMap = {
+      "management-essential": "웹 운영 필수 체크 리스트",
+      "management-shoppingmall": "쇼핑몰 운영 방법",
+      "management-reservation": "숙박/예약 운영 방법",
+      "management-contsell": "온라인 강의 사이트 운영",
+    };
+
+    // 현재 URL 가져오기
+    const currentUrl = window.location.href;
+
+    // URL에서 해당되는 1뎁스 텍스트 확인
+    const matchedHeaderText = Object.keys(urlToHeaderMap).find(key =>
+      currentUrl.includes(key)
+    );
+
+    // 해당 1뎁스 텍스트가 존재하면 기본적으로 하이라이트 추가
+    if (matchedHeaderText) {
+      document.querySelectorAll(".accordion-header").forEach(header => {
+        if (header.textContent.trim() === urlToHeaderMap[matchedHeaderText]) {
+          // 해당 1뎁스 기본 하이라이트 적용
+          header.style.color = "#0049FF";
+        }
+      });
+    }
+
+    // 아코디언 메뉴 열고 닫힘에 따라 하이라이트 적용
+    document.querySelectorAll(".accordion-header").forEach(header => {
+      header.addEventListener("click", () => {
+        // 하위 메뉴가 열려 있는지 확인
+        const isOpen = header.classList.contains("active");
+
+        if (isOpen) {
+          // 하이라이트 추가
+          header.style.color = "#0049FF";
+        } else {
+          // 하이라이트 제거
+          header.style.color = "#fff";
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+==========================================================================
+/* https://eumdesign.imweb.me/management-reservation 페이지에 적용된 디자인 */
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아코디언 사이드 네비게이션 - 숙박/예약 운영 방법</title>
+    <style>
+        /* 기본 스타일 설정 */
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        /* 좌측 사이드 네비게이션 스타일 */
+        .side-nav {
+            width: 260px;
+            padding: 20px;
+            font-family: 'Pretendard', sans-serif;
+            color: #fff;
+        }
+
+        .side-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 아코디언 헤더 스타일 */
+        .accordion-header {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 5px 0;
+            position: relative;
+            color: #fff;
+            transition: color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .accordion-header:hover {
+            color: #0049FF;
+        }
+
+        /* 화살표 스타일 */
+        .accordion-header::after {
+            content: "▶";
+            font-size: 12px;
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            transition: transform 0.4s ease, color 0.3s ease;
+            color: #666;
+        }
+
+        .accordion-header.active::after {
+            content: "▼";
+            color: #0049FF;
+        }
+
+        /* 최상위 카테고리 세로선 */
+        .side-nav > ul > .sub-menu {
+            display: none;
+            padding-left: 15px;
+            margin-top: 5px;
+            border-left: 2px solid #444;
+        }
+
+        /* 2뎁스 개별 세로선 */
+        .sub-menu .sub-menu > li {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .sub-menu .sub-menu > li::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: -5px;
+            bottom: -5px;
+            width: 2px;
+            background: linear-gradient(to bottom, #444, #444);
+            transition: background-color 0.3s ease;
+        }
+
+        /* 클릭된 항목의 세로선 및 텍스트 강조 */
+        .sub-menu .sub-menu li.active::before {
+            background: linear-gradient(to bottom, #0049FF, #0049FF);
+        }
+
+        .sub-menu li {
+            padding: 5px 0;
+            padding-left: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .sub-menu li:hover {
+            color: #0049FF;
+        }
+
+        /* 텍스트 강조 스타일 */
+        .highlighted-text span {
+            color: #0049FF;
+        }
+
+        /* 우측 네모 박스 텍스트 하이라이트 스타일 */
+        .highlighted-box {
+            color: #0049FF;
+        }
+    </style>
+</head>
+<body>
+    <!-- 사이드 네비게이션 -->
+    <nav class="side-nav">
+        <ul>
+            <!-- 아코디언 메뉴1 - 웹 운영 필수 체크 리스트 -->
+            <li class="accordion-header" id="essential-header">웹 운영 필수 체크 리스트</li>
+
+            <!-- 아코디언 메뉴2 - 쇼핑몰 운영 방법 -->
+            <li class="accordion-header" id="shopping-header">쇼핑몰 운영 방법</li>
+
+            <!-- 아코디언 메뉴3 - 숙박/예약 운영 방법 -->
+            <li class="accordion-header active">숙박/예약 운영 방법</li>
+            <ul class="sub-menu" style="display: block;">
+                <li class="accordion-header">필수 체크 사항</li>
+                <ul class="sub-menu" style="display: none;">
+                    <li data-target="w20241027cf953f704ac68">약관 설정 및 SSL 설치하기</li>
+                    <li data-target="w20241027931cfd004afb1">결제수단 신청 및 설정하기</li>
+                    <li data-target="w20241027106e6361a5e3f">네이버페이, 간편구매 신청하기</li>
+                    <li data-target="w202410272e568a5060264">실시간 상담 설치하기</li>
+                    <li data-target="w202410272f53dd4faf0fa">PG 심사 통과를 위한 필수 확인사항</li>
+                    <li data-target="w20241027e35a9e247597d">예약 및 쇼핑 기능 활성화</li>
+                </ul>
+                <li class="accordion-header">예약 상품 관리</li>
+                <ul class="sub-menu" style="display: none;">
+                    <li data-target="w20241027fe1fd96a5ad0d">예약 상품 등록하기</li>
+                    <li data-target="w202410279715e3d47e9ce">예약 상품 진열하기</li>
+                    <li data-target="w2024102736b4c54099b7f">예약 설정하기</li>
+                    <li data-target="w20241027c7993c9a25413">예약 옵션 상품 등록하기</li>
+                    <li data-target="w20241027f2811dac08e04">연일 할인 설정하기</li>
+                    <li data-target="w20241027c658b986aba95">특정 기간 예약 막기/풀기</li>
+                </ul>
+                <li class="accordion-header">고객 관리</li>
+                <ul class="sub-menu" style="display: none;">
+                    <li data-target="w2024102703697c577ac4f">가이드 제작 준비 중</li>
+                </ul>
+            </ul>
+
+            <!-- 아코디언 메뉴4 - 온라인 강의 사이트 운영 -->
+            <li class="accordion-header" id="contsell-header">온라인 강의 사이트 운영</li>
+        </ul>
+    </nav>
+
+<script>
+    let previousHighlighted;
+    let previousBoxHighlighted;
+
+    // 상위 뎁스 초기화 함수
+    function resetSubMenus() {
+        document.querySelectorAll('.accordion-header.active').forEach(header => {
+            header.classList.remove('active');
+            header.nextElementSibling.style.display = 'none';
+        });
+    }
+
+    // 아코디언 메뉴 클릭 이벤트 설정
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            // 페이지 이동 기능 추가
+            if (header.id === "essential-header") {
+                window.location.href = "https://eumdesign.imweb.me/management-essential";
+                return;
+            } else if (header.id === "shopping-header") {
+                window.location.href = "https://eumdesign.imweb.me/management-shoppingmall";
+                return;
+            } else if (header.id === "contsell-header") {
+                window.location.href = "https://eumdesign.imweb.me/management-contsell";
+                return;
+            }
+
+            const subMenu = header.nextElementSibling;
+
+            // 현재 클릭한 뎁스만 열고 닫기
+            header.classList.toggle('active');
+            subMenu.style.display = header.classList.contains('active') ? 'block' : 'none';
+
+            // 3뎁스 초기화
+            if (header.classList.contains('active')) {
+                subMenu.querySelectorAll('.sub-menu').forEach(innerSub => {
+                    innerSub.style.display = 'none';
+                });
+            }
+        });
+    });
+
+    // 세부 항목 클릭 이벤트 설정 (고유 ID 기반 중앙 이동 및 강조 효과)
+    document.querySelectorAll('.sub-menu .sub-menu > li').forEach(item => {
+        item.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+            const targetSection = document.getElementById("text_" + targetId);
+
+            // 이전 강조 제거
+            if (previousHighlighted) {
+                previousHighlighted.classList.remove('active');
+            }
+
+            // 현재 항목 세로선 강조
+            this.classList.add('active');
+            previousHighlighted = this;
+
+            // 우측 네모 박스 텍스트 색상 하이라이트 적용 및 중앙 이동
+            if (previousBoxHighlighted) {
+                previousBoxHighlighted.classList.remove('highlighted-box');
+            }
+            if (targetSection) {
+                targetSection.classList.add('highlighted-box');
+                previousBoxHighlighted = targetSection;
+
+                // 스크롤 이동: 우측 박스를 중앙에 위치시키기
+                const yOffset = (window.innerHeight / 2) - (targetSection.getBoundingClientRect().height / 2);
+                const y = targetSection.getBoundingClientRect().top + window.pageYOffset - yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+        });
+    });
+  document.addEventListener("DOMContentLoaded", function () {
+    // URL과 1뎁스 메뉴 매핑
+    const urlToHeaderMap = {
+      "management-essential": "웹 운영 필수 체크 리스트",
+      "management-shoppingmall": "쇼핑몰 운영 방법",
+      "management-reservation": "숙박/예약 운영 방법",
+      "management-contsell": "온라인 강의 사이트 운영",
+    };
+
+    // 현재 URL 가져오기
+    const currentUrl = window.location.href;
+
+    // URL에서 해당되는 1뎁스 텍스트 확인
+    const matchedHeaderText = Object.keys(urlToHeaderMap).find(key =>
+      currentUrl.includes(key)
+    );
+
+    // 해당 1뎁스 텍스트가 존재하면 기본적으로 하이라이트 추가
+    if (matchedHeaderText) {
+      document.querySelectorAll(".accordion-header").forEach(header => {
+        if (header.textContent.trim() === urlToHeaderMap[matchedHeaderText]) {
+          // 해당 1뎁스 기본 하이라이트 적용
+          header.style.color = "#0049FF";
+        }
+      });
+    }
+
+    // 아코디언 메뉴 열고 닫힘에 따라 하이라이트 적용
+    document.querySelectorAll(".accordion-header").forEach(header => {
+      header.addEventListener("click", () => {
+        // 하위 메뉴가 열려 있는지 확인
+        const isOpen = header.classList.contains("active");
+
+        if (isOpen) {
+          // 하이라이트 추가
+          header.style.color = "#0049FF";
+        } else {
+          // 하이라이트 제거
+          header.style.color = "#fff";
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+==========================================================================
+/* https://eumdesign.imweb.me/management-contsell 페이지에 적용된 디자인 */
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온라인 강의 사이트 운영</title>
+    <style>
+        /* 기본 스타일 설정 */
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        /* 좌측 사이드 네비게이션 스타일 */
+        .side-nav {
+            width: 260px;
+            padding: 20px;
+            font-family: 'Pretendard', sans-serif;
+            color: #fff;
+        }
+
+        .side-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 아코디언 헤더 스타일 */
+        .accordion-header {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 5px 0;
+            position: relative;
+            color: #fff;
+            transition: color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .accordion-header:hover {
+            color: #0049FF;
+        }
+
+        /* 화살표 스타일 */
+        .accordion-header::after {
+            content: "▶";
+            font-size: 12px;
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            transition: transform 0.4s ease, color 0.3s ease;
+            color: #666;
+        }
+
+        .accordion-header.active::after {
+            content: "▼";
+            color: #0049FF;
+        }
+
+        /* 최상위 카테고리 세로선 */
+        .side-nav > ul > .sub-menu {
+            display: none;
+            padding-left: 15px;
+            margin-top: 5px;
+            border-left: 2px solid #444;
+        }
+
+        /* 2뎁스 개별 세로선 */
+        .sub-menu .sub-menu > li {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .sub-menu .sub-menu > li::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: -5px;
+            bottom: -5px;
+            width: 2px;
+            background: linear-gradient(to bottom, #444, #444);
+            transition: background-color 0.3s ease;
+        }
+
+        /* 클릭된 항목의 세로선 및 텍스트 강조 */
+        .sub-menu .sub-menu li.active::before {
+            background: linear-gradient(to bottom, #0049FF, #0049FF);
+        }
+
+        .sub-menu li {
+            padding: 5px 0;
+            padding-left: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .sub-menu li:hover {
+            color: #0049FF;
+        }
+
+        /* 텍스트 강조 스타일 */
+        .highlighted-text span {
+            color: #0049FF;
+        }
+
+        /* 우측 네모 박스 텍스트 하이라이트 스타일 */
+        .highlighted-box {
+            color: #0049FF;
+        }
+    </style>
+</head>
+<body>
+    <!-- 사이드 네비게이션 -->
+    <nav class="side-nav">
+        <ul>
+            <!-- 아코디언 메뉴1 - 웹 운영 필수 체크 리스트 -->
+            <li class="accordion-header">웹 운영 필수 체크 리스트</li>
+
+            <!-- 아코디언 메뉴2 - 쇼핑몰 운영 방법 -->
+            <li class="accordion-header">쇼핑몰 운영 방법</li>
+
+            <!-- 아코디언 메뉴3 - 숙박/예약 운영 방법 -->
+            <li class="accordion-header">숙박/예약 운영 방법</li>
+
+            <!-- 아코디언 메뉴4 - 온라인 강의 사이트 운영 -->
+            <li class="accordion-header active">온라인 강의 사이트 운영</li>
+            <ul class="sub-menu" style="display: block;"> <!-- 기본으로 열림 상태, 2뎁스만 보이게 설정 -->
+                <li class="accordion-header">필수 체크 사항</li>
+                <ul class="sub-menu" style="display: none;">
+                    <li data-target="w20241027faf9933cb9e51">약관 설정 및 SSL 설치하기</li>
+                    <li data-target="w20241027424319d1cae35">결제수단 신청 및 설정하기</li>
+                    <li data-target="w202410272df5368521d20">네이버페이, 간편구매 신청하기</li>
+                    <li data-target="w20241027295b5e9f01cc6">실시간 상담 설치하기</li>
+                    <li data-target="w20241027f11273e30af2c">PG 심사 통과를 위한 필수 확인사항</li>
+                </ul>
+                <li class="accordion-header">강의 컨텐츠 관리</li>
+                <ul class="sub-menu" style="display: none;">
+                    <li data-target="w20241027c40361b796071">다운로드 상품 등록하기 (디지털/콘텐츠 상품)</li>
+                    <li data-target="w20241027f1240a85d499b">인터넷 강의, 동영상 업로드 방법</li>
+                </ul>
+                <li class="accordion-header">회원 관리</li>
+                <ul class="sub-menu" style="display: none;">
+                    <li data-target="w20241027bf9fe1db86a2e">유료 멤버쉽 서비스 만들기 (회원그룹 이용권)</li>
+                </ul>
+                <li class="accordion-header">결제 및 수강권 관리</li>
+                <ul class="sub-menu" style="display: none;">
+                    <li data-target="w202410279230076352d3f">가이드 제작 준비 중</li>
+                </ul>
+            </ul>
+        </ul>
+    </nav>
+
+<script>
+    let previousHighlighted;
+    let previousBoxHighlighted;
+
+    // 상위 뎁스 초기화 함수
+    function resetSubMenus() {
+        document.querySelectorAll('.accordion-header.active').forEach(header => {
+            header.classList.remove('active');
+            header.nextElementSibling.style.display = 'none';
+        });
+    }
+
+    // 아코디언 메뉴 클릭 이벤트 설정
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const menuText = header.innerText;
+            if (menuText === "웹 운영 필수 체크 리스트") {
+                window.location.href = "https://eumdesign.imweb.me/management-essential";
+                return;
+            } else if (menuText === "쇼핑몰 운영 방법") {
+                window.location.href = "https://eumdesign.imweb.me/management-shoppingmall";
+                return;
+            } else if (menuText === "숙박/예약 운영 방법") {
+                window.location.href = "https://eumdesign.imweb.me/management-reservation";
+                return;
+            }
+
+            const subMenu = header.nextElementSibling;
+            header.classList.toggle('active');
+            subMenu.style.display = header.classList.contains('active') ? 'block' : 'none';
+
+            // 3뎁스 초기화
+            if (header.classList.contains('active')) {
+                subMenu.querySelectorAll('.sub-menu').forEach(innerSub => {
+                    innerSub.style.display = 'none';
+                });
+            }
+        });
+    });
+
+    // 세부 항목 클릭 이벤트 설정 (고유 ID 기반 중앙 이동 및 강조 효과)
+    document.querySelectorAll('.sub-menu .sub-menu > li').forEach(item => {
+        item.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+            const targetSection = document.getElementById("text_" + targetId);
+
+            // 이전 강조 제거
+            if (previousHighlighted) {
+                previousHighlighted.classList.remove('active');
+            }
+
+            // 현재 항목 세로선 강조
+            this.classList.add('active');
+            previousHighlighted = this;
+
+            // 우측 네모 박스 텍스트 색상 하이라이트 적용 및 중앙 이동
+            if (previousBoxHighlighted) {
+                previousBoxHighlighted.classList.remove('highlighted-box');
+            }
+            if (targetSection) {
+                targetSection.classList.add('highlighted-box');
+                previousBoxHighlighted = targetSection;
+
+                // 스크롤 이동: 우측 박스를 중앙에 위치시키기
+                const yOffset = (window.innerHeight / 2) - (targetSection.getBoundingClientRect().height / 2);
+                const y = targetSection.getBoundingClientRect().top + window.pageYOffset - yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+        });
+    });
+  document.addEventListener("DOMContentLoaded", function () {
+    // URL과 1뎁스 메뉴 매핑
+    const urlToHeaderMap = {
+      "management-essential": "웹 운영 필수 체크 리스트",
+      "management-shoppingmall": "쇼핑몰 운영 방법",
+      "management-reservation": "숙박/예약 운영 방법",
+      "management-contsell": "온라인 강의 사이트 운영",
+    };
+
+    // 현재 URL 가져오기
+    const currentUrl = window.location.href;
+
+    // URL에서 해당되는 1뎁스 텍스트 확인
+    const matchedHeaderText = Object.keys(urlToHeaderMap).find(key =>
+      currentUrl.includes(key)
+    );
+
+    // 해당 1뎁스 텍스트가 존재하면 기본적으로 하이라이트 추가
+    if (matchedHeaderText) {
+      document.querySelectorAll(".accordion-header").forEach(header => {
+        if (header.textContent.trim() === urlToHeaderMap[matchedHeaderText]) {
+          // 해당 1뎁스 기본 하이라이트 적용
+          header.style.color = "#0049FF";
+        }
+      });
+    }
+
+    // 아코디언 메뉴 열고 닫힘에 따라 하이라이트 적용
+    document.querySelectorAll(".accordion-header").forEach(header => {
+      header.addEventListener("click", () => {
+        // 하위 메뉴가 열려 있는지 확인
+        const isOpen = header.classList.contains("active");
+
+        if (isOpen) {
+          // 하이라이트 추가
+          header.style.color = "#0049FF";
+        } else {
+          // 하이라이트 제거
+          header.style.color = "#fff";
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
+
